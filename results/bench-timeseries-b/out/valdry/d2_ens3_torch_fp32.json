@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "test_15_s0.pt,test_15_s1.pt,test_15_s2.pt",
+  "rounds": 5,
+  "mase": 0.23511556002965403,
+  "sql": 0.18476540395720106,
+  "cover80": 0.79125,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def2_test_d2_ens3_torch_fp32_2026-01-01_2026-01-05.parquet",
+ "def_": 2,
+ "days": [
+  "2026-01-01",
+  "2026-01-05"
+ ],
+ "spread": 1.05,
+ "note": ""
+}

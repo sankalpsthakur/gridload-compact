@@ -1,0 +1,351 @@
+{
+ "plan": "b",
+ "stages": {
+  "env": {
+   "ok": true,
+   "secs": 32.1,
+   "result": {
+    "pip_rc": 0,
+    "probe_rc": 0,
+    "versions": "3.13.15 2.5.3 3.0.6 25.0.1 2.11.0+cpu 1.22.0 1.30.0 0.106",
+    "err": "",
+    "cpu": "CPU(s):                                  4\nModel name:                              AMD EPYC 7B12\nThread(s) per core:                      2\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 ss\n4\n               total        used        free      shared  buff/cache   available\nMem:              31           1          24           0           5          30\n"
+   }
+  },
+  "svc_prepare": {
+   "ok": true,
+   "secs": 22.1,
+   "result": "prepared"
+  },
+  "restore_field": {
+   "ok": true,
+   "secs": 0.0,
+   "result": "/kaggle/input/notebooks/sankalpsthakur/bench-timeseries-a2/fieldcache"
+  },
+  "restore_ckpts": {
+   "ok": true,
+   "secs": 0.2,
+   "result": "/kaggle/input/notebooks/sankalpsthakur/bench-timeseries-a2/ckpt"
+  },
+  "verify_frozen": {
+   "ok": true,
+   "secs": 1.8,
+   "result": {
+    "checked": 8,
+    "meta": "ok 8"
+   }
+  },
+  "assemble_test": {
+   "ok": true,
+   "secs": 5.0,
+   "result": {
+    "15": {
+     "params": 77451,
+     "params_per_net": 25817,
+     "fp32_bytes": 344362,
+     "int8_bytes": 144175,
+     "spread": 1.05,
+     "fp32_sha256": "81e7e6b9f9c850d6ed04b1f8b83c50de77a9a419655eb14190cdf25a7dbce3e4",
+     "int8_sha256": "1e1dfaca195e8cb5d8977739bf7b91e34c8ab99d8275b39e9297988f65ed1622"
+    },
+    "60": {
+     "params": 82827,
+     "params_per_net": 27609,
+     "fp32_bytes": 365869,
+     "int8_bytes": 149554,
+     "spread": 1.2,
+     "fp32_sha256": "6d610b1c66c6509ef448c52f469127dbadfb554c19298f20499ce0be79f7db4e",
+     "int8_sha256": "549c86f26bc0c8fb56e4ab8d278165d05f4d9aac9c0073a27030b8f1da2a5bf7"
+    }
+   }
+  },
+  "dryrun_codepaths": {
+   "ok": true,
+   "secs": 16.6,
+   "result": {
+    "d2_ens3_torch_fp32": {
+     "mase": 0.23512,
+     "missing": 0,
+     "routing": null
+    },
+    "d2_ens3_ort_fp32": {
+     "mase": 0.23512,
+     "missing": 0,
+     "routing": null
+    },
+    "d2_ens3_ort_int8": {
+     "mase": 0.24224,
+     "missing": 0,
+     "routing": null
+    },
+    "d2_service_int8": {
+     "mase": 0.24224,
+     "missing": 0,
+     "routing": {
+      "specialist": 50
+     }
+    },
+    "d2_single_s0": {
+     "mase": 0.23763,
+     "missing": 0,
+     "routing": null
+    },
+    "d2_single_s1": {
+     "mase": 0.23787,
+     "missing": 0,
+     "routing": null
+    },
+    "d2_single_s2": {
+     "mase": 0.24348,
+     "missing": 0,
+     "routing": null
+    },
+    "d2_nohol_s0": {
+     "mase": 0.33699,
+     "missing": 0,
+     "routing": null
+    },
+    "d5_ens3_torch_fp32": {
+     "mase": 0.26945,
+     "missing": 0,
+     "routing": null
+    },
+    "d5_ens3_ort_fp32": {
+     "mase": 0.26945,
+     "missing": 0,
+     "routing": null
+    },
+    "d5_ens3_ort_int8": {
+     "mase": 0.27246,
+     "missing": 0,
+     "routing": null
+    },
+    "d5_service_int8": {
+     "mase": 0.27246,
+     "missing": 0,
+     "routing": {
+      "specialist": 50
+     }
+    },
+    "d5_single_s0": {
+     "mase": 0.27158,
+     "missing": 0,
+     "routing": null
+    },
+    "d5_single_s1": {
+     "mase": 0.27429,
+     "missing": 0,
+     "routing": null
+    },
+    "d5_single_s2": {
+     "mase": 0.27321,
+     "missing": 0,
+     "routing": null
+    },
+    "d5_nohol_s0": {
+     "mase": 0.48402,
+     "missing": 0,
+     "routing": null
+    }
+   }
+  },
+  "test_f": {
+   "ok": true,
+   "secs": 41.4,
+   "result": {
+    "rcs": {
+     "d2_ens3_torch_fp32": 0,
+     "d2_ens3_ort_fp32": 0,
+     "d2_ens3_ort_int8": 0,
+     "d2_service_int8": 0,
+     "d2_single_s0": 0,
+     "d2_single_s1": 0,
+     "d2_single_s2": 0,
+     "d2_nohol_s0": 0,
+     "d5_ens3_torch_fp32": 0,
+     "d5_ens3_ort_fp32": 0,
+     "d5_ens3_ort_int8": 0,
+     "d5_service_int8": 0,
+     "d5_single_s0": 0,
+     "d5_single_s1": 0,
+     "d5_single_s2": 0,
+     "d5_nohol_s0": 0
+    },
+    "summaries": {
+     "d2_ens3_torch_fp32": {
+      "mase": 0.21539,
+      "sql": 0.17059,
+      "cover80": 0.7668,
+      "rounds": 52,
+      "missing": 9,
+      "routing": null
+     },
+     "d2_ens3_ort_fp32": {
+      "mase": 0.21539,
+      "sql": 0.17059,
+      "cover80": 0.7668,
+      "rounds": 52,
+      "missing": 9,
+      "routing": null
+     },
+     "d2_ens3_ort_int8": {
+      "mase": 0.21368,
+      "sql": 0.16953,
+      "cover80": 0.7665,
+      "rounds": 52,
+      "missing": 9,
+      "routing": null
+     },
+     "d2_service_int8": {
+      "mase": 0.21731,
+      "sql": 0.17291,
+      "cover80": 0.7696,
+      "rounds": 52,
+      "missing": 9,
+      "routing": {
+       "specialist": 513,
+       "fallback": 7
+      }
+     },
+     "d2_single_s0": {
+      "mase": 0.2149,
+      "sql": 0.1703,
+      "cover80": 0.7575,
+      "rounds": 52,
+      "missing": 9,
+      "routing": null
+     },
+     "d2_single_s1": {
+      "mase": 0.21723,
+      "sql": 0.17226,
+      "cover80": 0.7638,
+      "rounds": 52,
+      "missing": 9,
+      "routing": null
+     },
+     "d2_single_s2": {
+      "mase": 0.21624,
+      "sql": 0.17131,
+      "cover80": 0.7672,
+      "rounds": 52,
+      "missing": 9,
+      "routing": null
+     },
+     "d2_nohol_s0": {
+      "mase": 0.21908,
+      "sql": 0.17455,
+      "cover80": 0.7714,
+      "rounds": 52,
+      "missing": 9,
+      "routing": null
+     },
+     "d5_ens3_torch_fp32": {
+      "mase": 0.18342,
+      "sql": 0.14677,
+      "cover80": 0.8576,
+      "rounds": 52,
+      "missing": 0,
+      "routing": null
+     },
+     "d5_ens3_ort_fp32": {
+      "mase": 0.18342,
+      "sql": 0.14677,
+      "cover80": 0.8576,
+      "rounds": 52,
+      "missing": 0,
+      "routing": null
+     },
+     "d5_ens3_ort_int8": {
+      "mase": 0.18323,
+      "sql": 0.14682,
+      "cover80": 0.8577,
+      "rounds": 52,
+      "missing": 0,
+      "routing": null
+     },
+     "d5_service_int8": {
+      "mase": 0.18476,
+      "sql": 0.14801,
+      "cover80": 0.8562,
+      "rounds": 52,
+      "missing": 0,
+      "routing": {
+       "specialist": 513,
+       "fallback": 7
+      }
+     },
+     "d5_single_s0": {
+      "mase": 0.18427,
+      "sql": 0.14752,
+      "cover80": 0.8612,
+      "rounds": 52,
+      "missing": 0,
+      "routing": null
+     },
+     "d5_single_s1": {
+      "mase": 0.1843,
+      "sql": 0.14774,
+      "cover80": 0.8609,
+      "rounds": 52,
+      "missing": 0,
+      "routing": null
+     },
+     "d5_single_s2": {
+      "mase": 0.18337,
+      "sql": 0.14656,
+      "cover80": 0.8462,
+      "rounds": 52,
+      "missing": 0,
+      "routing": null
+     },
+     "d5_nohol_s0": {
+      "mase": 0.1904,
+      "sql": 0.15408,
+      "cover80": 0.8576,
+      "rounds": 52,
+      "missing": 0,
+      "routing": null
+     }
+    }
+   }
+  },
+  "test_evidence": {
+   "ok": true,
+   "secs": 16.1,
+   "result": {
+    "test_f_def2_2026-02-08_2026-03-31": 0,
+    "test_f_def5_2026-02-08_2026-03-31": 0,
+    "test_f_def2_2026-02-08_2026-03-14": 0,
+    "test_f_def5_2026-02-08_2026-03-14": 0,
+    "test_f_def2_2026-03-15_2026-03-31": 0,
+    "test_f_def5_2026-03-15_2026-03-31": 0
+   }
+  },
+  "svc_tests_final": {
+   "ok": true,
+   "secs": 3.9,
+   "result": {
+    "service_tests_rc": 0,
+    "repo_contract_tests_rc": 0,
+    "server_up": true,
+    "harness_single_15min_96": 0,
+    "harness_batch_15min_96": 0,
+    "harness_single_h_24": 0,
+    "harness_batch_h_24": 0,
+    "harness_single_h_72": 0,
+    "harness_batch_h_72": 0,
+    "ok": true
+   }
+  },
+  "bench_cpu": {
+   "ok": true,
+   "secs": 5.4,
+   "result": {
+    "15": 0,
+    "60": 0
+   }
+  }
+ },
+ "field_source": "a2 export (/kaggle/input/notebooks/sankalpsthakur/bench-timeseries-a2/fieldcache)",
+ "total_secs": 123.5
+}

@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "net60_int8.onnx",
+  "rounds": 3,
+  "mase": 0.4874780061036863,
+  "sql": 0.41652354408276393,
+  "cover80": 0.3902777777777778,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def5_smoke_ort60_int8_2026-01-01_2026-01-03.parquet",
+ "def_": 5,
+ "days": [
+  "2026-01-01",
+  "2026-01-03"
+ ],
+ "spread": null,
+ "note": ""
+}

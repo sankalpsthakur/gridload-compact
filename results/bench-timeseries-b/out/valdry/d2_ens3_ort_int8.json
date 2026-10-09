@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "net15_int8.onnx",
+  "rounds": 5,
+  "mase": 0.2422438023795081,
+  "sql": 0.18923898938590558,
+  "cover80": 0.7870833333333334,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def2_test_d2_ens3_ort_int8_2026-01-01_2026-01-05.parquet",
+ "def_": 2,
+ "days": [
+  "2026-01-01",
+  "2026-01-05"
+ ],
+ "spread": null,
+ "note": ""
+}

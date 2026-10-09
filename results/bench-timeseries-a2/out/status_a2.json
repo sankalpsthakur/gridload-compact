@@ -1,0 +1,498 @@
+{
+ "plan": "a2",
+ "stages": {
+  "env": {
+   "ok": true,
+   "secs": 45.4,
+   "result": {
+    "pip_rc": 0,
+    "probe_rc": 0,
+    "versions": "3.13.15 2.5.3 3.0.6 25.0.1 2.11.0+cpu 1.22.0 1.30.0 0.106",
+    "err": "",
+    "cpu": "CPU(s):                                  4\nModel name:                              Intel(R) Xeon(R) CPU @ 2.20GHz\nThread(s) per core:                      2\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic m\n4\n               total        used        free      shared  buff/cache   available\nMem:              31           1          24           0           5          30\n"
+   }
+  },
+  "repro_eval": {
+   "ok": true,
+   "secs": 0.0,
+   "result": {
+    "skipped": "no reference checkpoint in this build"
+   }
+  },
+  "field_pipeline": {
+   "ok": true,
+   "secs": 3104.9,
+   "result": null
+  },
+  "svc_prepare": {
+   "ok": true,
+   "secs": 42.2,
+   "result": "prepared"
+  },
+  "fetch_forecasts": {
+   "ok": true,
+   "secs": 684.1,
+   "result": {
+    "forecast_files": 5760
+   }
+  },
+  "sweep": {
+   "ok": true,
+   "secs": 1037.3,
+   "result": {
+    "sweep_15_h256": 0,
+    "sweep_60_h256": 0,
+    "sweep_15_h128": 0,
+    "sweep_60_h128": 0,
+    "sweep_15_h64": 0,
+    "sweep_60_h64": 0
+   }
+  },
+  "field_cache": {
+   "ok": true,
+   "secs": 2420.5,
+   "result": {
+    "rcs": [
+     0,
+     0
+    ],
+    "rows_def2": 28448,
+    "rows_def5": 28736,
+    "counts_match": true
+   }
+  },
+  "selection": {
+   "ok": true,
+   "secs": 0.9,
+   "result": {
+    "15": {
+     "selected": {
+      "hid": 64,
+      "emb": 16,
+      "params": 25817,
+      "J": 96,
+      "dmeans": 10,
+      "steps": 4000
+     },
+     "best_ref": {
+      "model": "flowstate",
+      "val_f_mase": 0.22754726792968757
+     },
+     "table": [
+      {
+       "tag": "sweep_15_h64",
+       "hid": 64,
+       "emb": 16,
+       "params": 25817,
+       "J": 96,
+       "dmeans": 10,
+       "val_s": {
+        "07:45": [
+         0.19187672336476355,
+         0.1538609085012104,
+         0.7183401639344262
+        ],
+        "05:30": [
+         0.20754312235371228,
+         0.16690884925455424,
+         0.7059767759562842
+        ]
+       },
+       "val_f_mase": 0.1863322768544436,
+       "val_f_sql": 0.14738517729133035,
+       "val_f_cover80": 0.7629660087719298,
+       "train_seconds": 406.03693294525146,
+       "rel_to_best": {
+        "07:45": 0.025170275484814875,
+        "05:30": 0.01571533417199622
+       },
+       "qualifies": true,
+       "gate_pass": true
+      },
+      {
+       "tag": "sweep_15_h128",
+       "hid": 128,
+       "emb": 32,
+       "params": 63913,
+       "J": 96,
+       "dmeans": 10,
+       "val_s": {
+        "07:45": [
+         0.18855291724704284,
+         0.15014842629287084,
+         0.7565630692167576
+        ],
+        "05:30": [
+         0.20509337976409658,
+         0.16373798851223087,
+         0.7447518214936247
+        ]
+       },
+       "val_f_mase": 0.18001437998972797,
+       "val_f_sql": 0.1419607432657888,
+       "val_f_cover80": 0.7691063596491228,
+       "train_seconds": 470.7965362071991,
+       "rel_to_best": {
+        "07:45": 0.007411648103607504,
+        "05:30": 0.003726302279114746
+       },
+       "qualifies": true,
+       "gate_pass": true
+      },
+      {
+       "tag": "sweep_15_h256",
+       "hid": 256,
+       "emb": 64,
+       "params": 176969,
+       "J": 96,
+       "dmeans": 10,
+       "val_s": {
+        "07:45": [
+         0.18716571086107897,
+         0.14911884775381956,
+         0.7521630236794171
+        ],
+        "05:30": [
+         0.20433197705231054,
+         0.16291147611962514,
+         0.7564606102003643
+        ]
+       },
+       "val_f_mase": 0.18369167467267555,
+       "val_f_sql": 0.1448944343652222,
+       "val_f_cover80": 0.7549890350877193,
+       "train_seconds": 969.7628765106201,
+       "rel_to_best": {
+        "07:45": 0.0,
+        "05:30": 0.0
+       },
+       "qualifies": true,
+       "gate_pass": true
+      }
+     ],
+     "gate_failed": false,
+     "reason": "smallest qualifying candidate that passes the VAL-F gate"
+    },
+    "60": {
+     "selected": {
+      "hid": 64,
+      "emb": 16,
+      "params": 27609,
+      "J": 96,
+      "dmeans": 14,
+      "steps": 4000
+     },
+     "best_ref": {
+      "model": "chronos-2",
+      "val_f_mase": 0.24268413770572322
+     },
+     "table": [
+      {
+       "tag": "sweep_60_h64",
+       "hid": 64,
+       "emb": 16,
+       "params": 27609,
+       "J": 96,
+       "dmeans": 14,
+       "val_s": {
+        "08:00": [
+         0.2069769986161038,
+         0.16447977945434492,
+         0.7132903621853899
+        ],
+        "06:00": [
+         0.2033788853833717,
+         0.16171477191964675,
+         0.7117249846531615
+        ]
+       },
+       "val_f_mase": 0.20283303707530173,
+       "val_f_sql": 0.15843791816958683,
+       "val_f_cover80": 0.7202485380116961,
+       "train_seconds": 432.89973306655884,
+       "rel_to_best": {
+        "08:00": 0.015213068661394713,
+        "06:00": 0.014223860809331246
+       },
+       "qualifies": true,
+       "gate_pass": true
+      },
+      {
+       "tag": "sweep_60_h128",
+       "hid": 128,
+       "emb": 32,
+       "params": 67497,
+       "J": 96,
+       "dmeans": 14,
+       "val_s": {
+        "08:00": [
+         0.20521212799203076,
+         0.16162903504891737,
+         0.7649861878453039
+        ],
+        "06:00": [
+         0.2017970106411665,
+         0.15926202892131147,
+         0.7627992633517494
+        ]
+       },
+       "val_f_mase": 0.20331022141161986,
+       "val_f_sql": 0.1586957826657835,
+       "val_f_cover80": 0.7167397660818714,
+       "train_seconds": 497.10890316963196,
+       "rel_to_best": {
+        "08:00": 0.0065564559264752464,
+        "06:00": 0.006335258679705635
+       },
+       "qualifies": true,
+       "gate_pass": true
+      },
+      {
+       "tag": "sweep_60_h256",
+       "hid": 256,
+       "emb": 64,
+       "params": 184137,
+       "J": 96,
+       "dmeans": 14,
+       "val_s": {
+        "08:00": [
+         0.20387542773559106,
+         0.16029285179885197,
+         0.7715162676488644
+        ],
+        "06:00": [
+         0.20052662261473445,
+         0.15796468636541824,
+         0.7698204419889504
+        ]
+       },
+       "val_f_mase": 0.20577806037622468,
+       "val_f_sql": 0.16073608733301434,
+       "val_f_cover80": 0.7123538011695907,
+       "train_seconds": 1008.6280872821808,
+       "rel_to_best": {
+        "08:00": 0.0,
+        "06:00": 0.0
+       },
+       "qualifies": true,
+       "gate_pass": true
+      }
+     ],
+     "gate_failed": false,
+     "reason": "smallest qualifying candidate that passes the VAL-F gate"
+    }
+   }
+  },
+  "stage2": {
+   "ok": true,
+   "secs": 2241.9,
+   "result": {
+    "val_15_s0": 0,
+    "val_60_s0": 0,
+    "val_15_s1": 0,
+    "val_60_s1": 0,
+    "val_15_s2": 0,
+    "val_60_s2": 0,
+    "info_v0_15": 0,
+    "info_v0_60": 0,
+    "test_15_s0": 0,
+    "test_60_s0": 0,
+    "test_15_s1": 0,
+    "test_60_s1": 0,
+    "test_15_s2": 0,
+    "test_60_s2": 0,
+    "test_15_nohol_s0": 0,
+    "test_60_nohol_s0": 0
+   }
+  },
+  "calibrate": {
+   "ok": true,
+   "secs": 93.6,
+   "result": {
+    "rcs": {
+     "calibrate_15": 0,
+     "calibrate_60": 0
+    },
+    "chosen": {
+     "15": 1.05,
+     "60": 1.2
+    }
+   }
+  },
+  "field_check": {
+   "ok": true,
+   "secs": 0.3,
+   "result": {
+    "2": {
+     "rows_rebuilt": 28448,
+     "rows_provisional": 28448,
+     "only_in_rebuilt": 0,
+     "only_in_provisional": 0,
+     "first_day_only_in_rebuilt": null,
+     "max_diff_mase": 0.0,
+     "nan_mismatch_mase": 0,
+     "max_diff_sql": 0.0,
+     "nan_mismatch_sql": 0,
+     "max_diff_mae": 0.0,
+     "nan_mismatch_mae": 0,
+     "max_diff_mae_naive": 0.0,
+     "nan_mismatch_mae_naive": 0,
+     "max_diff_n": 0.0,
+     "nan_mismatch_n": 0,
+     "passed": true
+    },
+    "5": {
+     "rows_rebuilt": 28736,
+     "rows_provisional": 27056,
+     "only_in_rebuilt": 1680,
+     "only_in_provisional": 0,
+     "first_day_only_in_rebuilt": "2026-02-10T09:00:00Z",
+     "max_diff_mase": 0.0,
+     "nan_mismatch_mase": 0,
+     "max_diff_sql": 0.0,
+     "nan_mismatch_sql": 0,
+     "max_diff_mae": 0.0,
+     "nan_mismatch_mae": 0,
+     "max_diff_mae_naive": 0.0,
+     "nan_mismatch_mae_naive": 0,
+     "max_diff_n": 0.0,
+     "nan_mismatch_n": 0,
+     "passed": true
+    },
+    "passed": true
+   }
+  },
+  "export_field": {
+   "ok": true,
+   "secs": 0.0,
+   "result": {
+    "field_def2.parquet": "7406ca10a270b5a5d33fabd779f452f658759a2acb37a3859e1cfd207d2e670e",
+    "field_def5.parquet": "2c8a5d2d6088ab3a55a6d8079192703433db6ffeff374cf30bd37cb499179c54",
+    "rounds_def2.npz": "b2c01c5434a53032ec0d3a9f02100833d42388e1c129f94b6e9cc1935fecc3d9",
+    "rounds_def5.npz": "f2f19d8c289f2846cea80e8fcbaec549773371be46b39e696a3ad2295f86f5d9",
+    "rows_def2": 28448,
+    "rows_def5": 28736
+   }
+  },
+  "val_dryrun": {
+   "ok": true,
+   "secs": 58.2,
+   "result": {
+    "rcs": {
+     "d2_ens3_torch_fp32": 0,
+     "d2_ens3_ort_fp32": 0,
+     "d2_ens3_ort_int8": 0,
+     "d2_service_int8": 0,
+     "d2_single_s0": 0,
+     "d2_single_s1": 0,
+     "d2_single_s2": 0,
+     "d5_ens3_torch_fp32": 0,
+     "d5_ens3_ort_fp32": 0,
+     "d5_ens3_ort_int8": 0,
+     "d5_service_int8": 0,
+     "d5_single_s0": 0,
+     "d5_single_s1": 0,
+     "d5_single_s2": 0,
+     "val_f_def2_2026-01-01_2026-02-07": 0,
+     "val_f_def5_2026-01-01_2026-02-07": 0
+    },
+    "weights": {
+     "15": {
+      "params": 77451,
+      "fp32_bytes": 344362,
+      "int8_bytes": 144175,
+      "spread": 1.05
+     },
+     "60": {
+      "params": 82827,
+      "fp32_bytes": 365869,
+      "int8_bytes": 149554,
+      "spread": 1.2
+     }
+    }
+   }
+  },
+  "svc_tests_valdry": {
+   "ok": true,
+   "secs": 5.5,
+   "result": {
+    "service_tests_rc": 0,
+    "repo_contract_tests_rc": 0,
+    "server_up": true,
+    "harness_single_15min_96": 0,
+    "harness_batch_15min_96": 0,
+    "harness_single_h_24": 0,
+    "harness_batch_h_24": 0,
+    "harness_single_h_72": 0,
+    "harness_batch_h_72": 0,
+    "ok": true
+   }
+  },
+  "freeze_candidate": {
+   "ok": true,
+   "secs": 0.0,
+   "result": {
+    "prereg_version": 1,
+    "commit_of_a2": "b9f63390f09f1cff659129bfefad2fe8ad11034d",
+    "kernel_a2": "bench-timeseries-a2",
+    "selection": {
+     "15": {
+      "hid": 64,
+      "emb": 16,
+      "params": 25817,
+      "J": 96,
+      "dmeans": 10,
+      "steps": 4000,
+      "gate_failed": false,
+      "reason": "smallest qualifying candidate that passes the VAL-F gate"
+     },
+     "60": {
+      "hid": 64,
+      "emb": 16,
+      "params": 27609,
+      "J": 96,
+      "dmeans": 14,
+      "steps": 4000,
+      "gate_failed": false,
+      "reason": "smallest qualifying candidate that passes the VAL-F gate"
+     }
+    },
+    "spread": {
+     "15": 1.05,
+     "60": 1.2
+    },
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "cutoffs": {
+     "sweep": "2025-06-30T23:45",
+     "val": "2025-12-31T23:45",
+     "test": "2026-02-06T23:45"
+    },
+    "test_stage_ckpt_sha256": {
+     "test_15_nohol_s0.pt": "cd6d0fd28b910b35fd01a0e12ead3a0611c8c512f54914d82de1e5d505efd631",
+     "test_15_s0.pt": "d0b03c3ef63ffabd3639ca1f087d9b0ab3183fe1f51d863be716c0c57bd11a4d",
+     "test_15_s1.pt": "1edff5f7cadfda4756d27f2ae434479d347c75726cb85d0d7e60fe535eb8153d",
+     "test_15_s2.pt": "4e67a872b20ac42254252a7d1450bb8069f94dcbc8962ab9b46504f5efffb0bb",
+     "test_60_nohol_s0.pt": "89bd5531bdda0c0c7e37591f602a03f2827fcc7395e88f1087a74e70a218d213",
+     "test_60_s0.pt": "f184a96c54e0ce44867363c632b3f19810c7383b1fbe65a40bde947f82a57e27",
+     "test_60_s1.pt": "77fd6aa7542120e43295822ac492259f59bc3135682e0dffe03e0034798f96f4",
+     "test_60_s2.pt": "3cabd3e212c6b5498ed8bb666fd9801aca805b5252370db74d10a55c026e8aef"
+    },
+    "val_stage_ckpt_sha256": {
+     "val_15_s0.pt": "c0faf0b93157cc9a6aa9ef8347ad939dc10e5d5679e6c34971f4859c417d5aac",
+     "val_15_s1.pt": "aeea332543b3ba49d8cc156c8c2e9503b0d2fbe64040615caf8e8c74fbe968e2",
+     "val_15_s2.pt": "7961819f2e0361d2a146d7976eb802143e3dcf6da617e6b9d4de0be2266a210b",
+     "val_60_s0.pt": "99f2e5b85d7e9e68b6e9805e817fb6473f2834bb853738d53081a2826a96505b",
+     "val_60_s1.pt": "2e4636a4fe1f01f38781042e86e7c9c6d26f664d84d756fa9cddd765a22d2852",
+     "val_60_s2.pt": "2a66f71288be3b41f22fc923728fe5ff6452172b0cfca3e4859e240037dab217"
+    }
+   }
+  }
+ },
+ "field_source": "a1 cache (provisional; valid for the VAL-F rounds, verified against the Mac copy offline)",
+ "field_rebuild": "complete, equals the provisional cache on shared rows",
+ "total_secs": 3390.6
+}

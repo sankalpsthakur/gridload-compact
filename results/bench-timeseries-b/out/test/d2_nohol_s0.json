@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "test_15_nohol_s0.pt",
+  "rounds": 52,
+  "mase": 0.2190762635240415,
+  "sql": 0.17455040139015682,
+  "cover80": 0.7714243431736326,
+  "n_missing": 9
+ },
+ "parquet": "/tmp/repo/runs/faith_final_def2_test_d2_nohol_s0_2026-02-08_2026-03-31.parquet",
+ "def_": 2,
+ "days": [
+  "2026-02-08",
+  "2026-03-31"
+ ],
+ "spread": 1.05,
+ "note": "def2 no-holiday ablation seed 0 torch fp32"
+}

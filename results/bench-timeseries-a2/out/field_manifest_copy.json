@@ -1,0 +1,8 @@
+{
+ "field_def2.parquet": "7406ca10a270b5a5d33fabd779f452f658759a2acb37a3859e1cfd207d2e670e",
+ "field_def5.parquet": "2c8a5d2d6088ab3a55a6d8079192703433db6ffeff374cf30bd37cb499179c54",
+ "rounds_def2.npz": "b2c01c5434a53032ec0d3a9f02100833d42388e1c129f94b6e9cc1935fecc3d9",
+ "rounds_def5.npz": "f2f19d8c289f2846cea80e8fcbaec549773371be46b39e696a3ad2295f86f5d9",
+ "rows_def2": 28448,
+ "rows_def5": 28736
+}

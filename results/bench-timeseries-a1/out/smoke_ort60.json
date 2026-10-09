@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "net60.onnx",
+  "rounds": 3,
+  "mase": 0.47852629365767085,
+  "sql": 0.40776972609503304,
+  "cover80": 0.39074074074074067,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def5_smoke_ort60_2026-01-01_2026-01-03.parquet",
+ "def_": 5,
+ "days": [
+  "2026-01-01",
+  "2026-01-03"
+ ],
+ "spread": null,
+ "note": ""
+}

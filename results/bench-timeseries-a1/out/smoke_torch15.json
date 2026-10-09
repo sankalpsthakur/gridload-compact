@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "smoke_15.pt",
+  "rounds": 3,
+  "mase": 0.5313420952842011,
+  "sql": 0.44881726288431606,
+  "cover80": 0.3371527777777778,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def2_smoke_torch15_2026-01-01_2026-01-03.parquet",
+ "def_": 2,
+ "days": [
+  "2026-01-01",
+  "2026-01-03"
+ ],
+ "spread": 1.1,
+ "note": ""
+}

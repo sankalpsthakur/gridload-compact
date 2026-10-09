@@ -1,0 +1,59 @@
+{
+ "prereg_version": 1,
+ "commit_of_a2": "b9f63390f09f1cff659129bfefad2fe8ad11034d",
+ "kernel_a2": "bench-timeseries-a2",
+ "selection": {
+  "15": {
+   "hid": 64,
+   "emb": 16,
+   "params": 25817,
+   "J": 96,
+   "dmeans": 10,
+   "steps": 4000,
+   "gate_failed": false,
+   "reason": "smallest qualifying candidate that passes the VAL-F gate"
+  },
+  "60": {
+   "hid": 64,
+   "emb": 16,
+   "params": 27609,
+   "J": 96,
+   "dmeans": 14,
+   "steps": 4000,
+   "gate_failed": false,
+   "reason": "smallest qualifying candidate that passes the VAL-F gate"
+  }
+ },
+ "spread": {
+  "15": 1.05,
+  "60": 1.2
+ },
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "cutoffs": {
+  "sweep": "2025-06-30T23:45",
+  "val": "2025-12-31T23:45",
+  "test": "2026-02-06T23:45"
+ },
+ "test_stage_ckpt_sha256": {
+  "test_15_nohol_s0.pt": "cd6d0fd28b910b35fd01a0e12ead3a0611c8c512f54914d82de1e5d505efd631",
+  "test_15_s0.pt": "d0b03c3ef63ffabd3639ca1f087d9b0ab3183fe1f51d863be716c0c57bd11a4d",
+  "test_15_s1.pt": "1edff5f7cadfda4756d27f2ae434479d347c75726cb85d0d7e60fe535eb8153d",
+  "test_15_s2.pt": "4e67a872b20ac42254252a7d1450bb8069f94dcbc8962ab9b46504f5efffb0bb",
+  "test_60_nohol_s0.pt": "89bd5531bdda0c0c7e37591f602a03f2827fcc7395e88f1087a74e70a218d213",
+  "test_60_s0.pt": "f184a96c54e0ce44867363c632b3f19810c7383b1fbe65a40bde947f82a57e27",
+  "test_60_s1.pt": "77fd6aa7542120e43295822ac492259f59bc3135682e0dffe03e0034798f96f4",
+  "test_60_s2.pt": "3cabd3e212c6b5498ed8bb666fd9801aca805b5252370db74d10a55c026e8aef"
+ },
+ "val_stage_ckpt_sha256": {
+  "val_15_s0.pt": "c0faf0b93157cc9a6aa9ef8347ad939dc10e5d5679e6c34971f4859c417d5aac",
+  "val_15_s1.pt": "aeea332543b3ba49d8cc156c8c2e9503b0d2fbe64040615caf8e8c74fbe968e2",
+  "val_15_s2.pt": "7961819f2e0361d2a146d7976eb802143e3dcf6da617e6b9d4de0be2266a210b",
+  "val_60_s0.pt": "99f2e5b85d7e9e68b6e9805e817fb6473f2834bb853738d53081a2826a96505b",
+  "val_60_s1.pt": "2e4636a4fe1f01f38781042e86e7c9c6d26f664d84d756fa9cddd765a22d2852",
+  "val_60_s2.pt": "2a66f71288be3b41f22fc923728fe5ff6452172b0cfca3e4859e240037dab217"
+ }
+}

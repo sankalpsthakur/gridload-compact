@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "net60.onnx",
+  "rounds": 38,
+  "mase": 0.20312374692468857,
+  "sql": 0.15786388403219762,
+  "cover80": 0.8089546783625733,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def5_val_d5_ens3_ort_fp32_2026-01-01_2026-02-07.parquet",
+ "def_": 5,
+ "days": [
+  "2026-01-01",
+  "2026-02-07"
+ ],
+ "spread": null,
+ "note": ""
+}

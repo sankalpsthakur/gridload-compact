@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "info_v0_60.pt",
+  "rounds": 38,
+  "mase": 0.2002209997339826,
+  "sql": 0.1556960424801733,
+  "cover80": 0.745687134502924,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def5_info_v0_60_2026-01-01_2026-02-07.parquet",
+ "def_": 5,
+ "days": [
+  "2026-01-01",
+  "2026-02-07"
+ ],
+ "spread": null,
+ "note": ""
+}

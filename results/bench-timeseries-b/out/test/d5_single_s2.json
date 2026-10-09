@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "test_60_s2.pt",
+  "rounds": 52,
+  "mase": 0.1833676209694743,
+  "sql": 0.14656283296946987,
+  "cover80": 0.8461777300346143,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_final_def5_test_d5_single_s2_2026-02-08_2026-03-31.parquet",
+ "def_": 5,
+ "days": [
+  "2026-02-08",
+  "2026-03-31"
+ ],
+ "spread": 1.2,
+ "note": "def5 single member seed 2 torch fp32"
+}

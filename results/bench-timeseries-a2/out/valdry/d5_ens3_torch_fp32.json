@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "val_60_s0.pt,val_60_s1.pt,val_60_s2.pt",
+  "rounds": 38,
+  "mase": 0.20312374653278178,
+  "sql": 0.1578638841526454,
+  "cover80": 0.8089546783625733,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def5_val_d5_ens3_torch_fp32_2026-01-01_2026-02-07.parquet",
+ "def_": 5,
+ "days": [
+  "2026-01-01",
+  "2026-02-07"
+ ],
+ "spread": 1.2,
+ "note": ""
+}

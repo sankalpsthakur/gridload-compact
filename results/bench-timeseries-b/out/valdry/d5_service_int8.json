@@ -1,0 +1,21 @@
+{
+ "summary": {
+  "label": "service:finalW:int8",
+  "rounds": 5,
+  "mase": 0.27246494336844124,
+  "sql": 0.21578389055274622,
+  "cover80": 0.8911111111111112,
+  "n_missing": 0,
+  "routing": {
+   "specialist": 50
+  }
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def5_test_d5_service_int8_2026-01-01_2026-01-05.parquet",
+ "def_": 5,
+ "days": [
+  "2026-01-01",
+  "2026-01-05"
+ ],
+ "spread": null,
+ "note": ""
+}

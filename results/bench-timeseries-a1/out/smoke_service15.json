@@ -1,0 +1,21 @@
+{
+ "summary": {
+  "label": "service:smokeW:int8",
+  "rounds": 3,
+  "mase": 0.5418219871278739,
+  "sql": 0.45915040940336743,
+  "cover80": 0.33923611111111107,
+  "n_missing": 0,
+  "routing": {
+   "specialist": 30
+  }
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def2_smoke_service15_2026-01-01_2026-01-03.parquet",
+ "def_": 2,
+ "days": [
+  "2026-01-01",
+  "2026-01-03"
+ ],
+ "spread": null,
+ "note": ""
+}

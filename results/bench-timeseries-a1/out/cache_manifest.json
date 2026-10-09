@@ -1,0 +1,36 @@
+{
+ "created": "2026-10-07 10:46:01 UTC",
+ "hf_revision": "72c6cb0fe11a7c0349b063c74129ff73a87542cc",
+ "files": {
+  "cache/bank15.npz": "cedc4d10d3d0def41b27c76315dc7e78f6e314aed17af1212cdc18c353a2cad6",
+  "cache/bank60.npz": "887e5aafbf25b7f771e743812e9c7c531ebe7a9c710211cc60691e5c25fc26c7",
+  "cache/clock_ref.npz": "2731590de3ab89334e4d88e810ce205f08b7ad4bdbf84244d98dc4ad52fca56a",
+  "cache/field_def2.parquet": "7406ca10a270b5a5d33fabd779f452f658759a2acb37a3859e1cfd207d2e670e",
+  "cache/field_def5.parquet": "357b8a6ae4e2460bac8bc240d2e1e6bd54f4811e597c914fa637175f2bafe5a0",
+  "cache/hol_table.npz": "2ade18a72fb14cc2ee38f00c5d86a0af9bcb62dd745941b1e315d82372cebdae",
+  "cache/rounds_def2.npz": "b2c01c5434a53032ec0d3a9f02100833d42388e1c129f94b6e9cc1935fecc3d9",
+  "cache/rounds_def5.npz": "f2f19d8c289f2846cea80e8fcbaec549773371be46b39e696a3ad2295f86f5d9",
+  "smard/50Hertz.parquet": "7f486149f2936bfd299df5fe44aee1e7e719b0dcf269b7cfe3ec68d386c10a9b",
+  "smard/APG.parquet": "2a7c6e5ce4bab88a7991b869bbd4a996170f5988f191eceec8a18cc4ec8c85a9",
+  "smard/AT.parquet": "2a7c6e5ce4bab88a7991b869bbd4a996170f5988f191eceec8a18cc4ec8c85a9",
+  "smard/Amprion.parquet": "360adba13a75138ea8862e09efff108d63ba0e49ac06cd752bbbae31672e66ec",
+  "smard/Creos.parquet": "42b4b1061ed1f91b2311b419bee172a38b3a0c4575c1184dfc5a632f5b7be435",
+  "smard/DE-LU.parquet": "31729a5bf25a97356d7079400bace1ddf75f01be6f3cf0b89314134c33cad0bc",
+  "smard/DE.parquet": "395e7d116ec9864e5c8b87cd83a7f0e16372768af817d4d90f8b30fe7394a028",
+  "smard/LU.parquet": "42b4b1061ed1f91b2311b419bee172a38b3a0c4575c1184dfc5a632f5b7be435",
+  "smard/TenneT.parquet": "97ec368a249a7601124790bd91ee0eec15e3c3b36b4a4b0aac08cec5bb345e79",
+  "smard/TransnetBW.parquet": "1612bd39b9ec69d057cbb9294915642a9eec3182a487a4d61eef222304f55a58"
+ },
+ "smard_last_ts": {
+  "50Hertz": "2026-10-07 09:45:00",
+  "APG": "2026-10-07 09:15:00",
+  "AT": "2026-10-07 09:15:00",
+  "Amprion": "2026-10-07 09:45:00",
+  "Creos": "2026-10-07 09:30:00",
+  "DE-LU": "2026-10-07 09:15:00",
+  "DE": "2026-10-07 09:15:00",
+  "LU": "2026-10-07 09:30:00",
+  "TenneT": "2026-10-07 09:15:00",
+  "TransnetBW": "2026-10-07 09:45:00"
+ }
+}

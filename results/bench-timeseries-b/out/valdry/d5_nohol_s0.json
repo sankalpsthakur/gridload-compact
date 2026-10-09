@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "test_60_nohol_s0.pt",
+  "rounds": 5,
+  "mase": 0.4840237083186169,
+  "sql": 0.3711622951301292,
+  "cover80": 0.6536111111111111,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def5_test_d5_nohol_s0_2026-01-01_2026-01-05.parquet",
+ "def_": 5,
+ "days": [
+  "2026-01-01",
+  "2026-01-05"
+ ],
+ "spread": 1.2,
+ "note": ""
+}

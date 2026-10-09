@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "val_15_s2.pt",
+  "rounds": 38,
+  "mase": 0.18741509274725762,
+  "sql": 0.1481762149986455,
+  "cover80": 0.7843475877192982,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def2_val_d2_single_s2_2026-01-01_2026-02-07.parquet",
+ "def_": 2,
+ "days": [
+  "2026-01-01",
+  "2026-02-07"
+ ],
+ "spread": 1.05,
+ "note": ""
+}

@@ -1,0 +1,16 @@
+# data caches, checkpoints, environments and generated kernel payloads are not committed
+data/
+ckpt/
+results/*/ckpt/
+results/*/fieldcache/
+results/*/out/dry_weights/
+results/*/out/service_weights/
+assets/ref/
+kaggle/
+submission/*.patch
+*.pt
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store

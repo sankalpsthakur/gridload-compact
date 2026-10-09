@@ -1,0 +1,22 @@
+{
+ "summary": {
+  "label": "service:finalW:int8",
+  "rounds": 52,
+  "mase": 0.1847649701804282,
+  "sql": 0.14801052613656857,
+  "cover80": 0.8561927784205007,
+  "n_missing": 0,
+  "routing": {
+   "specialist": 513,
+   "fallback": 7
+  }
+ },
+ "parquet": "/tmp/repo/runs/faith_final_def5_test_d5_service_int8_2026-02-08_2026-03-31.parquet",
+ "def_": 5,
+ "days": [
+  "2026-02-08",
+  "2026-03-31"
+ ],
+ "spread": null,
+ "note": "def5 service code path int8"
+}

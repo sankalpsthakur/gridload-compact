@@ -1,0 +1,24 @@
+--- fetch
+Traceback (most recent call last):
+  File "/tmp/repo/scripts/kdriver.py", line 56, in guarded
+    r = fn(*a, **k)
+  File "/tmp/repo/scripts/kdriver.py", line 135, in stage_fetch
+    raise RuntimeError(f"fetch failed: smard rc={rs} ({n_s}/10 files), archive rc={ra} ({n_a} files)")
+RuntimeError: fetch failed: smard rc=0 (10/10 files), archive rc=1 (6157 files)
+
+--- svc_tests_smoke
+Traceback (most recent call last):
+  File "/tmp/repo/scripts/kdriver.py", line 56, in guarded
+    r = fn(*a, **k)
+  File "/tmp/repo/scripts/kdriver.py", line 261, in svc_tests
+    raise RuntimeError("venv/pip failed")
+RuntimeError: venv/pip failed
+
+--- field_cache
+Traceback (most recent call last):
+  File "/tmp/repo/scripts/kdriver.py", line 56, in guarded
+    r = fn(*a, **k)
+  File "/tmp/repo/scripts/kdriver.py", line 162, in stage_field_cache
+    raise RuntimeError(f"field cache: {r}")
+RuntimeError: field cache: {'rcs': [0, 0], 'rows_def2': 28448, 'rows_def5': 27056, 'counts_match': False}
+

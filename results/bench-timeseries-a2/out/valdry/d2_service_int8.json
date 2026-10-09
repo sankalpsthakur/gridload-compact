@@ -1,0 +1,21 @@
+{
+ "summary": {
+  "label": "service:dryW:int8",
+  "rounds": 38,
+  "mase": 0.1861639016338775,
+  "sql": 0.14645765870729494,
+  "cover80": 0.7889802631578947,
+  "n_missing": 0,
+  "routing": {
+   "specialist": 380
+  }
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def2_val_d2_service_int8_2026-01-01_2026-02-07.parquet",
+ "def_": 2,
+ "days": [
+  "2026-01-01",
+  "2026-02-07"
+ ],
+ "spread": null,
+ "note": ""
+}

@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "sweep_60_h64.pt",
+  "rounds": 38,
+  "mase": 0.20283303707530173,
+  "sql": 0.15843791816958683,
+  "cover80": 0.7202485380116961,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def5_sweep_60_h64_2026-01-01_2026-02-07.parquet",
+ "def_": 5,
+ "days": [
+  "2026-01-01",
+  "2026-02-07"
+ ],
+ "spread": null,
+ "note": ""
+}

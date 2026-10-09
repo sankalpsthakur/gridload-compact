@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "test_15_s0.pt,test_15_s1.pt,test_15_s2.pt",
+  "rounds": 52,
+  "mase": 0.2153856822962949,
+  "sql": 0.1705881493092261,
+  "cover80": 0.7667741683740044,
+  "n_missing": 9
+ },
+ "parquet": "/tmp/repo/runs/faith_final_def2_test_d2_ens3_torch_fp32_2026-02-08_2026-03-31.parquet",
+ "def_": 2,
+ "days": [
+  "2026-02-08",
+  "2026-03-31"
+ ],
+ "spread": 1.05,
+ "note": "def2 ens3 torch fp32"
+}

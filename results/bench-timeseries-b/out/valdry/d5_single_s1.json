@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "test_60_s1.pt",
+  "rounds": 5,
+  "mase": 0.2742889074644763,
+  "sql": 0.2188953160838148,
+  "cover80": 0.8902777777777778,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_val_def5_test_d5_single_s1_2026-01-01_2026-01-05.parquet",
+ "def_": 5,
+ "days": [
+  "2026-01-01",
+  "2026-01-05"
+ ],
+ "spread": 1.2,
+ "note": ""
+}

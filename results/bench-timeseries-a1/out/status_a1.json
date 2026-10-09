@@ -1,0 +1,167 @@
+{
+ "plan": "a1",
+ "stages": {
+  "env": {
+   "ok": true,
+   "secs": 43.4,
+   "result": {
+    "pip_rc": 0,
+    "probe_rc": 0,
+    "versions": "3.13.15 2.5.3 3.0.6 25.0.1 2.11.0+cpu 1.22.0 1.30.0 0.106",
+    "err": "",
+    "cpu": "CPU(s):                                  4\nModel name:                              Intel(R) Xeon(R) CPU @ 2.20GHz\nThread(s) per core:                      2\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic m\n4\n               total        used        free      shared  buff/cache   available\nMem:              31           1          24           0           5          30\n"
+   }
+  },
+  "fetch": {
+   "ok": false,
+   "secs": 449.5,
+   "error": "RuntimeError: fetch failed: smard rc=0 (10/10 files), archive rc=1 (6157 files)"
+  },
+  "tables": {
+   "ok": true,
+   "secs": 134.8,
+   "result": {
+    "hol_sha256": "c477b2ece4f721f9edc742ed0bda154855cf259db8bf6d174ba7093dfe376479",
+    "hol_day0": 16801,
+    "hol_matches_mac": true
+   }
+  },
+  "repro_eval": {
+   "ok": true,
+   "secs": 8.7,
+   "result": {
+    "rows_kernel": 380,
+    "rows_mac": 380,
+    "only_one_side": 0,
+    "max_abs_diff_mase": 1.231716466598698e-07,
+    "nan_mismatch_mase": 0,
+    "max_abs_diff_sql": 9.359483604809427e-08,
+    "nan_mismatch_sql": 0,
+    "max_abs_diff_cover80": 0.0,
+    "nan_mismatch_cover80": 0,
+    "max_abs_diff_n": 0.0,
+    "nan_mismatch_n": 0,
+    "passed": true,
+    "summary_kernel": {
+     "label": "v0_15_s0.pt",
+     "rounds": 38,
+     "mase": 0.18990131293281998,
+     "sql": 0.15018358547884608,
+     "cover80": 0.7291940789473684,
+     "n_missing": 0
+    }
+   }
+  },
+  "field_cache": {
+   "ok": false,
+   "secs": 965.2,
+   "error": "RuntimeError: field cache: {'rcs': [0, 0], 'rows_def2': 28448, 'rows_def5': 27056, 'counts_match': False}"
+  },
+  "smoke": {
+   "ok": true,
+   "secs": 52.0,
+   "result": {
+    "train_rcs": {
+     "smoke_train15": 0,
+     "smoke_train60": 0
+    },
+    "checks": {
+     "15": {
+      "torch_mase": 0.5313420952842011,
+      "ort_fp32_mase": 0.531342091811083,
+      "ort_int8_mase": 0.5418219937625596,
+      "service_int8_mase": 0.5418219871278739,
+      "routing": {
+       "specialist": 30
+      },
+      "torch_vs_ort_fp32": 3.4731180154068397e-09,
+      "int8_vs_service": 6.634685689732578e-09,
+      "specialist_all": true,
+      "n_missing": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "ok": true
+     },
+     "60": {
+      "torch_mase": 0.4785262979545101,
+      "ort_fp32_mase": 0.47852629365767085,
+      "ort_int8_mase": 0.4874780061036863,
+      "service_int8_mase": 0.48747798462461295,
+      "routing": {
+       "specialist": 30
+      },
+      "torch_vs_ort_fp32": 4.296839273276731e-09,
+      "int8_vs_service": 2.1479073353258826e-08,
+      "specialist_all": true,
+      "n_missing": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "ok": true
+     }
+    },
+    "ok": true
+   }
+  },
+  "svc_tests_smoke": {
+   "ok": false,
+   "secs": 1.5,
+   "error": "RuntimeError: venv/pip failed"
+  },
+  "repro_table": {
+   "ok": true,
+   "secs": 7.2,
+   "result": {
+    "lines_kernel": 40,
+    "lines_mac": 40,
+    "differing_lines": 20,
+    "identical": false,
+    "first_diffs": [
+     [
+      9,
+      "| 1 | **gridload-v0** | 0.150 | 0.190 [0.146, 0.248] | -0.038 [-0.069, -0.012] | 68% | 1428 [1357, 1485] |",
+      "| 1 | **gridload-v0** | 0.150 | 0.190 [0.145, 0.238] | -0.038 [-0.067, -0.012] | 68% | 1428 [1357, 1485] |"
+     ],
+     [
+      10,
+      "| 2 | flowstate | 9 | 0.228 [0.161, 0.316] | - | - | 1344 [1272, 1398] |",
+      "| 2 | flowstate | 9 | 0.228 [0.159, 0.303] | - | - | 1344 [1272, 1398] |"
+     ],
+     [
+      11,
+      "| 3 | visiontspp-large | 307 | 0.234 [0.177, 0.321] | +0.006 [-0.011, +0.023] | 58% | 1360 [1303, 1413] |",
+      "| 3 | visiontspp-large | 307 | 0.234 [0.175, 0.300] | +0.006 [-0.010, +0.023] | 58% | 1360 [1303, 1413] |"
+     ],
+     [
+      12,
+      "| 4 | chronos-bolt-base | 205 | 0.245 [0.172, 0.337] | +0.018 [+0.002, +0.033] | 39% | 1286 [1218, 1347] |",
+      "| 4 | chronos-bolt-base | 205 | 0.245 [0.171, 0.330] | +0.018 [+0.002, +0.033] | 39% | 1286 [1218, 1347] |"
+     ],
+     [
+      13,
+      "| 5 | visiontspp-base | 86 | 0.249 [0.184, 0.342] | +0.021 [+0.005, +0.033] | 34% | 1288 [1224, 1352] |",
+      "| 5 | visiontspp-base | 86 | 0.249 [0.183, 0.325] | +0.021 [+0.005, +0.034] | 34% | 1288 [1224, 1352] |"
+     ],
+     [
+      14,
+      "| 6 | chronos-bolt-small | 48 | 0.250 [0.170, 0.344] | +0.022 [-0.001, +0.047] | 39% | 1279 [1200, 1344] |",
+      "| 6 | chronos-bolt-small | 48 | 0.250 [0.169, 0.336] | +0.022 [-0.002, +0.047] | 39% | 1279 [1200, 1344] |"
+     ]
+    ]
+   }
+  },
+  "export_cache": {
+   "ok": true,
+   "secs": 0.5,
+   "result": {
+    "files": 18
+   }
+  }
+ },
+ "total_secs": 1600.6
+}

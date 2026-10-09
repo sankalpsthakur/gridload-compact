@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "registered": "2026-10-07 10:20 UTC, before any kernel of the Kaggle phase has produced a sweep, validation-stage or test-stage number",
+  "rule_text": "Per frequency, among the candidates below: a candidate qualifies if its VAL-S mean MASE is within 4 % of the best candidate's VAL-S mean MASE in EACH phase separately (07:45Z and 05:30Z for 15 min; 08:00Z and 06:00Z for hourly). Take the qualifying candidate with the fewest parameters. VAL-F gate: its mean MASE over the VAL-F rounds (faithful archive scoring, sweep checkpoint trained to 2025-06-30 23:45) must be below the best reference model's mean MASE over the same rounds in the real field; confidence intervals are reported, not used to gate. If it fails the gate, step up to the next larger qualifying candidate; if none passes, take the lowest VAL-F MASE and record gate_failed.",
+  "tolerance": 0.04,
+  "steps": 4000,
+  "candidates": {
+    "15": {"hids": [64, 128, 256], "emb": {"64": 16, "128": 32, "256": 64}, "J": 96, "dmeans": 10},
+    "60": {"hids": [64, 128, 256], "emb": {"64": 16, "128": 32, "256": 64}, "J": 96, "dmeans": 14}
+  },
+  "informational_only": ["v0_15 (hid 256, J 48, dmeans 0): retrain check against the Mac run", "v0_60 (same, hourly)"],
+  "ensemble_seeds": [0, 1, 2],
+  "ablation": {"no_holiday_features": {"seed": 0, "compared_with": "seed-0 member of the ensemble"}},
+  "spread": {"grid": [0.90, 0.95, 1.00, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30, 1.35, 1.40, 1.45, 1.50],
+             "objective": "mean over VAL-F rounds of mean-over-series SQL of the 3-seed ensemble trained to 2025-12-31 23:45; ties -> smaller scale; one scalar per frequency; applied unchanged to the test-stage ensemble and to its single members"},
+  "cutoffs": {"sweep": "2025-06-30T23:45", "val": "2025-12-31T23:45", "test": "2026-02-06T23:45"},
+  "windows": {"VAL-S": ["2025-07-01", "2025-12-31"], "VAL-F": ["2026-01-01", "2026-02-07"], "TEST-F": ["2026-02-08", "2026-03-31"],
+              "TEST-F sub-windows (views of the same evaluation, not new ones)": [["2026-02-08", "2026-03-14"], ["2026-03-15", "2026-03-31"]]},
+  "test_f_variants_per_definition": [
+    "ens3 torch fp32 (spread applied)",
+    "ens3 onnxruntime fp32 (exported, spread baked)",
+    "ens3 onnxruntime int8 (dynamic quantization of the same graph)",
+    "service code path, int8 (what the Docker image runs by default)",
+    "single member seed 0, torch fp32",
+    "single member seed 1, torch fp32",
+    "single member seed 2, torch fp32",
+    "no-holiday ablation, seed 0, torch fp32"
+  ],
+  "repro_gate": "the v0 dev checkpoint re-evaluated on VAL-F def 2 inside the kernel must reproduce the per-(round, series) MASE and SQL of the Mac run within 1e-4 and the field cache row counts 28448 / 28736; otherwise stop and report"
+}

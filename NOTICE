@@ -1,0 +1,72 @@
+gridload-compact
+Copyright 2026 Sankalp Thakur
+
+This repository is licensed under the Apache License, Version 2.0 (see LICENSE), except for the third-party
+material listed below.
+
+DATA
+
+1. SMARD
+   Bundesnetzagentur | SMARD.de, https://www.smard.de/, licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+   Source of the training data: net load, revised history from 2018-01 to 2026-02-06, fetched from the public API.
+   The model weights in submission/model-services/gridload-compact/weights/ are derived from this data.
+   Changes were made: aggregation to 15 minute and hourly values, normalisation, training of neural networks.
+
+2. TS-Arena-Archive
+   DAG-UPB/TS-Arena-Archive (Hugging Face), licence CC BY 4.0, pinned revision 72c6cb0fe11a7c0349b063c74129ff73a87542cc.
+   Used for evaluation only: served contexts, first-published ground truth and the forecasts of the reference models.
+   The score files and tables under results/ are computed from it (including scores of the reference models).
+   Nothing from it, and no forecast of any other model, enters training, calibration or the released weights.
+   Results are self-obtained evaluations on the Archive, not official rankings.
+
+3. TS-Arena model metadata
+   assets/models.json holds public model metadata (name, family, size, architecture) served by the TS-Arena dashboard
+   API (https://ts-arena.live). It is used only to label the reference models in the evidence tables.
+
+SOFTWARE
+
+4. holidays (python-holidays), MIT licence.
+   Copyright (c) Vacanza Team and individual contributors; Copyright (c) dr-prodigy 2017-2023; Copyright (c) ryanss 2014-2017.
+   Version 0.106 generated the holiday table submission/model-services/gridload-compact/weights/hol_table.npz (DE federal and state, AT). No code of the package is
+   distributed here or in the service; its licence text is at https://github.com/vacanza/python-holidays.
+
+5. ts-arena-backend (https://github.com/DAG-UPB/ts-arena-backend), MIT licence,
+   Copyright (c) 2025 Data Analytics Group - Paderborn University.
+   src/tsb/metrics.py re-implements its scoring (arena MASE, SQL, per-round averaging, bootstrapped Elo), read at HEAD 2863da2.
+
+6. ts-arena-models (https://github.com/DAG-UPB/ts-arena-models), MIT licence,
+   Copyright (c) 2025 Data Analytics Group - Paderborn University.
+   submission/model-services/tests/__init__.py, quantile_contract.py and run_harness.py are verbatim copies of
+   model-services/tests/ at commit cbbb347 (the contract checker and harness the service tests and README commands use).
+   The directory submission/model-services/gridload-compact/ is also contributed to that repository under its MIT licence
+   (https://github.com/DAG-UPB/ts-arena-models/pull/5).
+
+MIT LICENCE (items 5 and 6; the text below is the licence file of ts-arena-models and ts-arena-backend, which are identical)
+
+MIT License
+
+Copyright (c) 2025 Data Analytics Group - Paderborn University
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+SERVICE DIRECTORY
+
+submission/model-services/gridload-compact/ (service code and the ONNX weights) is additionally offered under the MIT licence, as contributed to
+DAG-UPB/ts-arena-models (pull request 5). Either licence may be used for that directory.
+

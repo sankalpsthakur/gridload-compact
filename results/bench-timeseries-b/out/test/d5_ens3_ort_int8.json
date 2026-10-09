@@ -1,0 +1,18 @@
+{
+ "summary": {
+  "label": "net60_int8.onnx",
+  "rounds": 52,
+  "mase": 0.183232555787468,
+  "sql": 0.14681973075949795,
+  "cover80": 0.8577164102612967,
+  "n_missing": 0
+ },
+ "parquet": "/tmp/repo/runs/faith_final_def5_test_d5_ens3_ort_int8_2026-02-08_2026-03-31.parquet",
+ "def_": 5,
+ "days": [
+  "2026-02-08",
+  "2026-03-31"
+ ],
+ "spread": null,
+ "note": "def5 ens3 onnxruntime int8"
+}
