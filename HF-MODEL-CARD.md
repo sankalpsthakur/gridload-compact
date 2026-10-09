@@ -22,9 +22,9 @@ https://github.com/sankalpsthakur/gridload-compact
 - **3-seed ensembles** per frequency; the quantile curves are averaged inside one ONNX graph.  Parameters: 25,817 per net at 15 min and 27,609 hourly; 77,451 and 82,827 per ensemble; **160,278 in total**.
 - A post-hoc scalar on the decile spread (1.05 at 15 min, 1.20 hourly) was chosen on validation data only.
 - **ONNX**, fp32 (344,362 B and 365,869 B) and int8 by dynamic quantization (144,175 B and 149,554 B).  The service default is int8.
-- **Inference**: a numpy feature pipeline (no torch) and ONNX Runtime on one thread.  A clock-signature gate compares the daily profile of the context with a fixed reference profile (`clock_ref.npz`); anything that is not
+- **Inference**: a numpy feature pipeline (no torch) and ONNX Runtime on one thread.  A clock-signature gate compares the daily profile of the context with a fixed reference profile (`weights/clock_ref.npz`); anything that is not
   a SMARD net-load series on the platform clock goes to a generic seasonal fallback with residual deciles, for which no claim is made.
-- Public holiday calendars (DE federal and state, AT) are baked into `hol_table.npz` and derived from timestamps only.
+- Public holiday calendars (DE federal and state, AT) are baked into `weights/hol_table.npz` and derived from timestamps only.
 
 ## Intended use and limits
 
@@ -34,7 +34,7 @@ https://github.com/sankalpsthakur/gridload-compact
   or operational track record and is not validated for grid operation or trading.
 - The comparison with foundation models is a specialist trained on the same SMARD series (cutoff before the window) against zero-shot generalists that saw none of it: the fair reading is "a specialist this small is
   competitive or better on its own series", not "better architecture".
-- Training is not bit-reproducible across hardware; the SHA-256 of the checkpoints behind the numbers are in `net15_info.json`, `net60_info.json` and `configs/final.json` of the GitHub repository.
+- Training is not bit-reproducible across hardware; the SHA-256 of the checkpoints behind the numbers are in `weights/net15_info.json`, `weights/net60_info.json` and `configs/final.json` of the GitHub repository.
 
 ## Training data and cutoff
 
@@ -107,11 +107,11 @@ Response: `{"prediction": [{"ts": ..., "value": ..., "probabilistic_values": {"q
 
 | file | what |
 |---|---|
-| `net15.onnx`, `net15_int8.onnx` | 15 min x 96 steps, 3-seed ensemble, fp32 (344,362 B) and int8 (144,175 B) |
-| `net60.onnx`, `net60_int8.onnx` | 1 h x 72 steps, 3-seed ensemble, fp32 (365,869 B) and int8 (149,554 B) |
-| `net15_info.json`, `net60_info.json` | feature specification, spread, parameter counts, SHA-256 of the member checkpoints and of the ONNX files |
-| `hol_table.npz` | baked public holiday calendar table (DE federal and state, AT) |
-| `clock_ref.npz` | reference daily profile of the clock gate |
+| `weights/net15.onnx`, `weights/net15_int8.onnx` | 15 min x 96 steps, 3-seed ensemble, fp32 (344,362 B) and int8 (144,175 B) |
+| `weights/net60.onnx`, `weights/net60_int8.onnx` | 1 h x 72 steps, 3-seed ensemble, fp32 (365,869 B) and int8 (149,554 B) |
+| `weights/net15_info.json`, `weights/net60_info.json` | feature specification, spread, parameter counts, SHA-256 of the member checkpoints and of the ONNX files |
+| `weights/hol_table.npz` | baked public holiday calendar table (DE federal and state, AT) |
+| `weights/clock_ref.npz` | reference daily profile of the clock gate |
 | `README.md` | this card |
 
 ## Licences
