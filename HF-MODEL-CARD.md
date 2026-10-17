@@ -41,7 +41,7 @@ https://github.com/sankalpsthakur/gridload-compact
 - SMARD net load (Bundesnetzagentur | SMARD.de, CC BY 4.0), revised history from 2018-01 fetched from the public API.  The shipped weights are the test-stage ensembles, trained on targets up to
   **2026-02-06 23:45**; the architecture selection used models cut at 2025-06-30 23:45 and the spread scalar used models cut at 2025-12-31 23:45.  The first evaluation round registers on 2026-02-08.
 - Public holiday table generated with the python `holidays` package (MIT), version 0.106.
-- No third-party model weights, and nothing from the TS-Arena Archive, were used for training or calibration.
+- No third-party model weights were used. The weights are trained on SMARD history only. The TS-Arena Archive's VAL-F window (2026-01-01 to 02-07) was used to choose the network width and to calibrate the two decile spread scalars; its TEST-F window only for the final evaluation. (Corrected 2026-10-18: an earlier version said nothing from the Archive was used for calibration.)
 
 ## Evaluation
 
@@ -118,7 +118,7 @@ Response: `{"prediction": [{"ts": ..., "value": ..., "probabilistic_values": {"q
 
 - Code and model weights: Apache-2.0.
 - Training data: SMARD, Bundesnetzagentur | SMARD.de, CC BY 4.0 (https://www.smard.de/); the weights are derived from it and changes were made.
-- Evaluation data: TS-Arena-Archive (DAG-UPB/TS-Arena-Archive), CC BY 4.0; used for evaluation only, not contained in the weights.
+- Evaluation data: TS-Arena-Archive (DAG-UPB/TS-Arena-Archive), CC BY 4.0; VAL-F used for width selection and spread calibration, TEST-F for evaluation only; not contained in the weights.
 - Holiday table: generated with the python `holidays` package (MIT).
 
 Self-evaluated, not peer-reviewed.  Sankalp Thakur, October 2026.

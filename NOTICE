@@ -16,7 +16,10 @@ DATA
    DAG-UPB/TS-Arena-Archive (Hugging Face), licence CC BY 4.0, pinned revision 72c6cb0fe11a7c0349b063c74129ff73a87542cc.
    Used for evaluation only: served contexts, first-published ground truth and the forecasts of the reference models.
    The score files and tables under results/ are computed from it (including scores of the reference models).
-   Nothing from it, and no forecast of any other model, enters training, calibration or the released weights.
+   Its TEST-F window (2026-02-08 to 03-31) is used for evaluation only.
+   Its VAL-F window (2026-01-01 to 02-07: served contexts, first-published truth and the reference models' forecasts) was used before the test to choose the network width (the pre-registered gate) and to calibrate the two decile spread scalars (1.05 at 15 min, 1.20 hourly).
+   The network weights are trained on SMARD history only; no forecast of any other model is used in training.
+   (Corrected 2026-10-18: an earlier version said nothing from the Archive entered calibration.)
    Results are self-obtained evaluations on the Archive, not official rankings.
 
 3. TS-Arena model metadata

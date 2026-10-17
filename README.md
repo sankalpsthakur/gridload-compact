@@ -224,7 +224,7 @@ Upload these files to the model repository: `net15.onnx`, `net15_int8.onnx`, `ne
 - Code and model weights in this repository: Apache-2.0 (`LICENSE`), except the third-party files named in `NOTICE`.  The `gridload-compact` service directory is also contributed to the MIT-licensed ts-arena-models repository in the pull request above, where it
   is offered under that repository's MIT licence (this is what its README says).
 - Training data: SMARD, Bundesnetzagentur | SMARD.de, CC BY 4.0 (https://www.smard.de/).  The weights are derived from it; changes were made.
-- Evaluation data: TS-Arena-Archive (DAG-UPB/TS-Arena-Archive), CC BY 4.0.  Nothing from it, and no forecast of any other model, enters training, calibration or the released weights.
+- Evaluation data: TS-Arena-Archive (DAG-UPB/TS-Arena-Archive), CC BY 4.0.  Its TEST-F window (2026-02-08 to 03-31) is used for evaluation only. Its VAL-F window (2026-01-01 to 02-07: served contexts, first-published truth and the reference models' forecasts) was used before the test to choose the network width (the pre-registered gate) and to calibrate the two decile spread scalars (1.05 at 15 min, 1.20 hourly). The network weights are trained on SMARD history only; no forecast of any other model is used in training. (Corrected 2026-10-18: an earlier version said nothing from the Archive entered calibration.)
 - Baked holiday table: generated with the python `holidays` package (MIT).
 - Third-party files and full attributions: `NOTICE`.
 

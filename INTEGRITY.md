@@ -20,7 +20,7 @@ export and service test ran in private Kaggle CPU kernels `bench-timeseries-*` (
 
 ## Licences
 - SMARD (Bundesnetzagentur) CC BY 4.0: training data, attribution "Bundesnetzagentur | SMARD.de".  CC BY 4.0 allows released weights derived from it (also commercially) with that attribution and a note that changes were made; no share-alike, no non-commercial clause.
-- TS-Arena-Archive CC BY 4.0: evaluation data only (contexts, truth, forecasts of other models); nothing from it, and no forecast of any other model, enters training, calibration or the released weights.  Results are self-obtained evaluations on the Archive, not official rankings (the Archive's rule).
+- TS-Arena-Archive CC BY 4.0: evaluation data only (contexts, truth, forecasts of other models); the weights are trained on SMARD only and no forecast of any other model enters training; VAL-F (truth and the field's forecasts) was used for the width gate and the spread calibration, TEST-F for evaluation only (corrected 2026-10-18; the earlier wording said nothing from the Archive entered calibration).  Results are self-obtained evaluations on the Archive, not official rankings (the Archive's rule).
 - `holidays` python package (MIT) generated the baked holiday table (DE federal + 16 state shares, AT), pinned to 0.106; its SHA256 equals the Mac table.
 - Our weights/code: to be offered under the MIT licence of ts-arena-models (owner decides; nothing was published).
 
