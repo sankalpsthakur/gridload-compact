@@ -212,7 +212,7 @@ What a clone of this repository cannot do without changes:
 
 ## TS-Arena submission
 
-Offered to the TS-Arena Reference Track as a pull request to ts-arena-models: https://github.com/DAG-UPB/ts-arena-models/pull/5.  Whether it is listed there, and under which model type, is the maintainers' decision.
+Offered to the TS-Arena Reference Track as a pull request to ts-arena-models (https://github.com/DAG-UPB/ts-arena-models/pull/5), which the maintainers closed on 2026-10-12: the Reference Track lists published methods, and its contribution guide (2026-10-13) does not include models trained from scratch. The maintainers invited the model to the Open Track, which it has not entered yet. (Updated 2026-10-19.)
 
 ## Hugging Face model repository
 
