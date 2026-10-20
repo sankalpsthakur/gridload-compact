@@ -1,0 +1,39 @@
+
+--- def 5 | TEST-F full (52 rounds) | mase | best reference by mean chronos-2 | 52 rounds, 518 tasks
+  A. old-style: ours 0.1846, chronos-2 0.1867; per-round difference -0.0021 [-0.0154, +0.0071] (ISO-week blocks); rounds won 0.48
+  B. per task : 100*mean ln(ref/ours) = -0.59 [-5.10, +5.97] (ISO-week blocks); tasks won 0.52; median per-task +0.96; 100*ln(mean_ref/mean_ours) = +1.12
+
+--- def 5 | first 35 rounds (02-08..03-14) | mase | best reference by mean chronos-2 | 35 rounds, 350 tasks
+  A. old-style: ours 0.1679, chronos-2 0.1626; per-round difference +0.0053 [-0.0006, +0.0103] (ISO-week blocks); rounds won 0.46
+  B. per task : 100*mean ln(ref/ours) = -4.47 [-7.43, -1.05] (ISO-week blocks); tasks won 0.46; median per-task -2.09; 100*ln(mean_ref/mean_ours) = -3.23
+  C1. per series (log-ratio, 35 rounds, vs chronos-2):
+      50Hertz                  mean -10.38   tasks won 0.43   ours 0.213 vs 0.191
+      APG                      mean  -3.14   tasks won 0.51   ours 0.146 vs 0.140
+      AT                       mean  -3.14   tasks won 0.51   ours 0.146 vs 0.140
+      Amprion                  mean  +4.93   tasks won 0.71   ours 0.204 vs 0.211
+      Creos                    mean -10.99   tasks won 0.43   ours 0.162 vs 0.153
+      DE                       mean  -4.20   tasks won 0.34   ours 0.151 vs 0.146
+      DE-LU                    mean  -4.12   tasks won 0.37   ours 0.150 vs 0.145
+      LU                       mean -10.99   tasks won 0.43   ours 0.162 vs 0.153
+      TenneT                   mean  +2.22   tasks won 0.49   ours 0.205 vs 0.215
+      TransnetBW               mean  -4.91   tasks won 0.34   ours 0.141 vs 0.133
+  C2. by error tercile of the reference (log-ratio, 35 rounds):
+      low-error tasks    tasks 117  mean log-ratio -16.30   tasks won 0.27   mean abs difference of MASE +0.0186
+      mid                tasks 116  mean log-ratio  -3.04   tasks won 0.42   mean abs difference of MASE +0.0077
+      high-error tasks   tasks 117  mean log-ratio  +5.94   tasks won 0.68   mean abs difference of MASE -0.0102
+
+--- def 5 | late March, archive-only (03-15..03-31) | mase | best reference by mean moirai-2-small | 17 rounds, 168 tasks
+  A. old-style: ours 0.2189, moirai-2-small 0.2288; per-round difference -0.0099 [-0.0380, +0.0058] (ISO-week blocks); rounds won 0.59
+  B. per task : 100*mean ln(ref/ours) = +4.29 [-5.34, +19.51] (ISO-week blocks); tasks won 0.55; median per-task +1.21; 100*ln(mean_ref/mean_ours) = +4.40
+
+--- def 5 | TEST-F full (52 rounds) | sql | best reference by mean chronos-2 | 52 rounds, 518 tasks
+  A. old-style: ours 0.1479, chronos-2 0.1502; per-round difference -0.0024 [-0.0145, +0.0062] (ISO-week blocks); rounds won 0.42
+  B. per task : 100*mean ln(ref/ours) = -1.03 [-6.69, +6.90] (ISO-week blocks); tasks won 0.48; median per-task -0.99; 100*ln(mean_ref/mean_ours) = +1.59
+
+--- def 5 | first 35 rounds (02-08..03-14) | sql | best reference by mean chronos-2 | 35 rounds, 350 tasks
+  A. old-style: ours 0.1340, chronos-2 0.1298; per-round difference +0.0042 [-0.0012, +0.0101] (ISO-week blocks); rounds won 0.37
+  B. per task : 100*mean ln(ref/ours) = -5.48 [-9.81, -1.85] (ISO-week blocks); tasks won 0.42; median per-task -4.65; 100*ln(mean_ref/mean_ours) = -3.17
+
+--- def 5 | late March, archive-only (03-15..03-31) | sql | best reference by mean moirai-2-small | 17 rounds, 168 tasks
+  A. old-style: ours 0.1765, moirai-2-small 0.1848; per-round difference -0.0084 [-0.0340, +0.0075] (ISO-week blocks); rounds won 0.53
+  B. per task : 100*mean ln(ref/ours) = +3.88 [-7.81, +21.29] (ISO-week blocks); tasks won 0.50; median per-task +0.15; 100*ln(mean_ref/mean_ours) = +4.63

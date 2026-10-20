@@ -15,6 +15,13 @@ A compact probabilistic load forecaster for the two SMARD net-load challenges of
 about 0.4 to 1.2 ms per series on one CPU thread.  Self-evaluated on the TS-Arena Archive; not an official ranking.  Code, protocol, ledger of the evaluations and reproduction scripts:
 https://github.com/sankalpsthakur/gridload-compact
 
+## Status as of 2026-10-19 (UTC)
+
+- **Live check (shadow, self-evaluated, not an official ranking):** on the completed live rounds registered 2026-08-24 to 2026-10-18 the frozen model placed **14th of 46 fitted models** on the definition-2 probabilistic ranking (platform Arena Score 145.8 [131.3, 160.3], rank range 1 to 17 under the platform's 28-day-block bootstrap; gap over visiontspp-large, the best reference model of the Archive window, +1.7 [-4.2, +8.5] with 7-day blocks, 468 common tasks). The contexts were rebuilt from current data, which is probably optimistic against the contexts the field received, by an amount that was not measured. Details: the correction under Evaluation and `results/shadow/l2/` in the GitHub repository.
+- **Limit, fallback share:** 15.8 % of the live definition-2 tasks (77 of 488) went to the generic seasonal fallback instead of the specialist, all in the rounds of 2026-09-03 to 09-23, when the platform's series had gaps of up to 63 h inside the context windows; none of the 250 tasks from 2026-09-24 on did. The pre-registered limit for a live entry was 5 %. The fallback carries no claim.
+- **Outcome:** the pre-registered go/no-go rule failed on two conditions on their own (gap over visiontspp-large +1.7 against +5.0 needed; fallback share 15.8 % against at most 5 %), so no live entry was made.
+- **Metric:** the platform retired the Archive-era MASE (naive last-value scale) on 2026-10-15 and now ranks by the Arena Score. The MASE and SQL numbers under Evaluation use the retired scale and stay valid for the convention they state.
+
 ## Model description
 
 - **Two MLP quantile nets**, one per challenge (15 min x 96 steps, 1 h x 72 steps).  Each net is a context encoder plus a shared per-step head (hidden width 64) that emits nine monotone deciles per step
@@ -30,8 +37,8 @@ https://github.com/sankalpsthakur/gridload-compact
 
 - **Intended use**: probabilistic net-load forecasts for the ten SMARD net-load series of the two TS-Arena challenges, on the platform's timestamp convention (UTC stamps that run 1 to 2 h early; the hourly series
   is the mean of the four quarter-hours), from a context of 1,000 points; CPU-only and edge-sized deployments; benchmarking and research.
-- **Not covered**: other series, frequencies or horizons are served by the seasonal fallback and no claim is made for them.  Its held-out evaluation covers only archive rounds of 2026-02-08 .. 2026-03-31; it has no live
-  or operational track record and is not validated for grid operation or trading.
+- **Not covered**: other series, frequencies or horizons are served by the seasonal fallback and no claim is made for them.  Its held-out evaluation covers archive rounds of 2026-02-08 .. 2026-03-31 and a shadow check on completed live rounds of 2026-08-24 .. 2026-10-18 (see Status); it was never entered live, has no
+  operational track record and is not validated for grid operation or trading.
 - The comparison with foundation models is a specialist trained on the same SMARD series (cutoff before the window) against zero-shot generalists that saw none of it: the fair reading is "a specialist this small is
   competitive or better on its own series", not "better architecture".
 - Training is not bit-reproducible across hardware; the SHA-256 of the checkpoints behind the numbers are in `weights/net15_info.json`, `weights/net60_info.json` and `configs/final.json` of the GitHub repository.
@@ -41,12 +48,12 @@ https://github.com/sankalpsthakur/gridload-compact
 - SMARD net load (Bundesnetzagentur | SMARD.de, CC BY 4.0), revised history from 2018-01 fetched from the public API.  The shipped weights are the test-stage ensembles, trained on targets up to
   **2026-02-06 23:45**; the architecture selection used models cut at 2025-06-30 23:45 and the spread scalar used models cut at 2025-12-31 23:45.  The first evaluation round registers on 2026-02-08.
 - Public holiday table generated with the python `holidays` package (MIT), version 0.106.
-- No third-party model weights were used. The weights are trained on SMARD history only. The TS-Arena Archive's VAL-F window (2026-01-01 to 02-07) was used to choose the network width and to calibrate the two decile spread scalars; its TEST-F window only for the final evaluation. (Corrected 2026-10-18: an earlier version said nothing from the Archive was used for calibration.)
+- No third-party model weights were used. The weights are trained on SMARD history only. The TS-Arena Archive's VAL-F window (2026-01-01 to 02-07) was used to choose the network width and to calibrate the two decile spread scalars; its TEST-F window only for the final evaluation. (Corrected 2026-10-17 23:16 UTC: an earlier version said nothing from the Archive was used for calibration.)
 
 ## Evaluation
 
 Self-evaluated on the TS-Arena Archive, window TEST-F (52 rounds, 2026-02-08 .. 2026-03-31; training cutoff 2026-02-06 23:45; configuration frozen and each variant evaluated once, pre-registered).
-Headline variant = the service code path with the int8 weights, scored with the platform's arena MASE and SQL against the 32 reference models of the Archive's field:
+Headline variant = the service code path with the int8 weights, scored with the platform's arena MASE and SQL (Archive-era scale, retired by the platform on 2026-10-15; see Status) against the 32 reference models of the Archive's field:
 
 - **Definition 2 (24 h at 15 min): lower mean MASE than every reference model on the full window.**  MASE 0.217 [0.173, 0.273] against 0.251 [0.184, 0.327] for the best reference model of the window, visiontspp-large (307 M parameters,
   about 4,000 times larger); per-round difference -0.034 [-0.059, -0.009]; SQL 0.173 against 0.201, difference -0.028 [-0.046, -0.011].  **Caveat that belongs to the claim:** the interval excludes 0 over
@@ -54,7 +61,7 @@ Headline variant = the service code path with the int8 weights, scored with the 
   (-0.070 [-0.111, -0.021] against that window's best reference, flowstate).
 - **Definition 5 (72 h at 1 h): a tie, not a win.**  MASE 0.185 [0.161, 0.214] against 0.187 [0.157, 0.226] for chronos-2 (120 M parameters, about 1,400 times larger); difference -0.002 [-0.015, +0.007];
   SQL 0.148 against 0.150, difference -0.002 [-0.014, +0.006].  The model matches the best reference on the full 52-round window at a fraction of its size; no win is claimed.
-  **Correction (2026-10-20):** the tie holds over the full 52-round window under both this MASE and the platform's Arena Score (gap -0.3 [-5.1, +6.8]). Over the first 35 rounds, the ones the live board reproduces, the model is behind chronos-2: MASE +0.005 [-0.001, +0.010] (3 % worse; the interval touches 0), Arena Score gap -4.1 [-7.3, -1.1] with 7-day blocks ([-5.9, -2.0] with 28-day blocks), SQL gap -5.3 [-9.4, -1.9]; it is ahead only on the 17 archive-only late-March rounds. "Matches the best reference" therefore holds on the full Archive window only. The MASE in this card is the Archive-era platform convention, which the platform retired on 2026-10-15 in favour of the Arena Score; the numbers stay valid for the convention they state. A shadow check of the frozen model on completed live rounds (2026-08-24 to 10-18, self-evaluated, `results/shadow/l2/` in the evidence repository) placed it 14th of 46 on the definition-2 probabilistic ranking, so no live entry was made.
+  **Correction (2026-10-19 21:01 UTC):** the tie holds over the full 52-round window under both this MASE and the platform's Arena Score (gap -0.3 [-5.1, +6.8]). Over the first 35 rounds, the ones the live board reproduces, the model is behind chronos-2: MASE +0.005 [-0.001, +0.010] (3 % worse; the interval touches 0), Arena Score gap -4.1 [-7.3, -1.1] with 7-day blocks ([-5.9, -2.0] with 28-day blocks), SQL gap -5.3 [-9.4, -1.9]; it is ahead only on the 17 archive-only late-March rounds. "Matches the best reference" therefore holds on the full Archive window only. The MASE in this card is the Archive-era platform convention, which the platform retired on 2026-10-15 in favour of the Arena Score; the numbers stay valid for the convention they state. A shadow check of the frozen model on completed live rounds (2026-08-24 to 10-18, self-evaluated; see Status; `results/shadow/l2/` in the GitHub repository) placed it 14th of 46 fitted models on the definition-2 probabilistic ranking, so no live entry was made.
 
 Scoring is the platform's arena MASE (MAE of the forecast divided by the MAE of the last-context-value persistence forecast over the same horizon) and SQL (scaled quantile loss, same scale), reimplemented from the
 MIT backend of TS-Arena.  This is a **self-obtained evaluation on the TS-Arena Archive and not an official ranking**.  Protocol: selection rule, ensemble, spread grid and the eight evaluated variants were
@@ -121,5 +128,6 @@ Response: `{"prediction": [{"ts": ..., "value": ..., "probabilistic_values": {"q
 - Training data: SMARD, Bundesnetzagentur | SMARD.de, CC BY 4.0 (https://www.smard.de/); the weights are derived from it and changes were made.
 - Evaluation data: TS-Arena-Archive (DAG-UPB/TS-Arena-Archive), CC BY 4.0; VAL-F used for width selection and spread calibration, TEST-F for evaluation only; not contained in the weights.
 - Holiday table: generated with the python `holidays` package (MIT).
+- Live-round data for the shadow check: public reads of the TS-Arena dashboard API (https://ts-arena.live/api/v1) on 2026-10-19 (UTC); the ground truth underneath is SMARD (CC BY 4.0). The platform's scoring code (DAG-UPB/ts-arena-backend, MIT) is vendored in the GitHub repository. The raw per-model score tables of the field are not redistributed; only our own aggregate results are.
 
 Self-evaluated, not peer-reviewed.  Sankalp Thakur, October 2026.

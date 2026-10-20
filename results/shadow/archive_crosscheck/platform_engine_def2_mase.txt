@@ -1,0 +1,24 @@
+
+=== def 2 | mase | TEST-F full (52 rounds) | tasks 511 | models 32 | fit 0.0s | max grad 3.1e-08
+  platform-engine scores: ours 161.9; best reference visiontspp-large 155.0
+  gap vs visiontspp-large     +7.0   7-day blocks [-0.3, +13.9] (1000 refits)   28-day (platform) [+0.3, +14.1]
+  gap vs chronos-2           +13.1   7-day blocks [+6.1, +19.8] (1000 refits)   28-day (platform) [+7.9, +18.7]
+  gap vs flowstate            +9.3   7-day blocks [+4.3, +14.3] (1000 refits)   28-day (platform) [+7.2, +11.4]
+  gap vs moirai-2-small      +22.8   7-day blocks [+17.7, +27.8] (1000 refits)   28-day (platform) [+18.7, +26.0]
+  bootstrap 0.5s
+
+=== def 2 | mase | first 35 rounds (02-08..03-14) | tasks 350 | models 32 | fit 0.0s | max grad 2.3e-07
+  platform-engine scores: ours 175.6; best reference visiontspp-large 174.2
+  gap vs visiontspp-large     +1.4   7-day blocks [-4.7, +7.4] (1000 refits)   28-day (platform) [-5.2, +7.3]
+  gap vs chronos-2            +8.7   7-day blocks [+2.4, +14.3] (1000 refits)   28-day (platform) [+1.0, +14.3]
+  gap vs flowstate            +7.9   7-day blocks [+2.8, +12.5] (1000 refits)   28-day (platform) [+4.0, +11.1]
+  gap vs moirai-2-small      +22.5   7-day blocks [+16.4, +27.9] (1000 refits)   28-day (platform) [+17.4, +26.4]
+  bootstrap 0.5s
+
+=== def 2 | mase | late March, archive-only (03-15..03-31) | tasks 161 | models 32 | fit 0.0s | max grad 3.5e-11
+  platform-engine scores: ours 135.7; best reference flowstate 123.3
+  gap vs flowstate           +12.4   7-day blocks [+1.8, +21.1] (1000 refits)   28-day (platform) [+12.4, +12.4]
+  gap vs visiontspp-large    +18.9   7-day blocks [+14.6, +24.7] (1000 refits)   28-day (platform) [+18.9, +18.9]
+  gap vs chronos-2           +22.6   7-day blocks [+13.0, +31.9] (1000 refits)   28-day (platform) [+22.6, +22.6]
+  gap vs moirai-2-small      +23.5   7-day blocks [+14.7, +32.2] (1000 refits)   28-day (platform) [+23.5, +23.5]
+  bootstrap 0.4s

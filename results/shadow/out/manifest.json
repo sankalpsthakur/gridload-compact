@@ -1,0 +1,88 @@
+{
+ "started": "2026-10-19T20:24:03Z",
+ "python": "3.13.15",
+ "numpy": "2.1.3",
+ "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+ "mock": false,
+ "build": {
+  "slug": "bench-timeseries-shadow",
+  "commit": "631e6a6ecaa1e1a450967b3150f21f87f4c5961b",
+  "built_utc": "2026-10-19 20:23:00",
+  "sources_sha256": {
+   "shadow_lib.py": "053fca424103e080f4b26925b27f7ee7e172349d331947334218611db761d6c1",
+   "shadow_analysis.py": "d9312a94914da346d018e26f91ae67bbc9088ce0621ee360051d94bf5eb750f5",
+   "shadow_kernel.py": "4f70567316a921881f076ccdce2edbf4e0ca3cdd38b4ee0f8052ceab2e6dff70",
+   "rounds_frozen.json": "161cb1e950cd2cac80bd8fc02c0c5bdeb7eb3b7f7eba24aba4700f5123cda1ef",
+   "vendor/arena_score.py": "e667b6b6570fc98ec88f6f0e6902f46956e376524b82fcd656fa2a23e1b12a22",
+   "vendor/forecast_metrics.py": "e39c065dca1ba1448638723351030311cede5d4d9bb00e5ee79836019fc7b78f",
+   "vendor/LICENSE-ts-arena-backend.txt": "f6cb37dc97a22212125ac5432f577b0a35e4836f4e7f336a315ad095434c540f"
+  },
+  "manifest_sha256": "32d3338994b27af76555a1a3f04999b40cde8bedfdc67dddbbb19be107bd2cf6"
+ },
+ "v1_files_sha256": {
+  "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "app/cal_np.py": "6c4475bbf3a5cffa8bfd7f5ce11833a90f8a925cbfdfc37166da4b83bfeb72b3",
+  "app/fallback.py": "988b40e89fc392ee38045c9c8b73351cfbb2ef1602c2342cdb4580dde994c6ce",
+  "app/feats.py": "b7a38400071a34fe09b4fba013e57ea9af0860570bd37cd9cb6814af7bdcccff",
+  "app/main.py": "5baeca7997aa1d3eefab34072a3ea795adfa2b3180082a024e11553eb3815804",
+  "app/model.py": "4a30b29a9b89b9eeb32b299bc96d65f7e6fb6cc96eea92cb2e4119903c5cf7a8",
+  "requirements.txt": "ecb24b27683476a1f874a09d3ea6ca0525d97dabe0749d9ed405fc54f32c028f",
+  "weights/net15_int8.onnx": "1e1dfaca195e8cb5d8977739bf7b91e34c8ab99d8275b39e9297988f65ed1622",
+  "weights/net60_int8.onnx": "549c86f26bc0c8fb56e4ab8d278165d05f4d9aac9c0073a27030b8f1da2a5bf7",
+  "weights/net15_info.json": "2b7f9f1b7e38bb903ba7847f9d48429d3b7cbaf23365f809cf5785985442cafc",
+  "weights/net60_info.json": "e11985785a0a5f16a356a0e15272aa650eea7b7fd02c1f07b788107c4244a632",
+  "weights/hol_table.npz": "2ade18a72fb14cc2ee38f00c5d86a0af9bcb62dd745941b1e315d82372cebdae",
+  "weights/clock_ref.npz": "2731590de3ab89334e4d88e810ce205f08b7ad4bdbf84244d98dc4ad52fca56a"
+ },
+ "onnxruntime": "1.30.0",
+ "n_models_listed": 70,
+ "def2_tasks": 560,
+ "def2_rows": 20591,
+ "def5_tasks": 540,
+ "def5_rows": 17650,
+ "api": {
+  "calls": 2465,
+  "retries": 0,
+  "mbytes": 922.7,
+  "errors": [],
+  "n_errors": 0
+ },
+ "decision": "NOT EVALUABLE (R0: the stored scores of visiontspp-large are not reproduced in definition 2)",
+ "ok": true,
+ "finished": "2026-10-19T20:42:02Z",
+ "seconds": 1078.6,
+ "files": {
+  "analysis.json": {
+   "bytes": 65194,
+   "sha256": "a8af79e70db8b2b2f825a552e285fb62240b7868e4a0b85420140cd7f2b6201b"
+  },
+  "log.txt": {
+   "bytes": 4820,
+   "sha256": "92734507623e2515e7e885bea2541ad3ffcb6b352f398701156d41ba06388e68"
+  },
+  "model_names.json": {
+   "bytes": 1767,
+   "sha256": "6ecbe06850138725c177da0bdfb1d2b6ad9e6679e4358210990c9154fb7d3503"
+  },
+  "scores_def2.csv.gz": {
+   "bytes": 1283880,
+   "sha256": "4e65582d45429064522cfde7e4add32d6a8d82be681e4c4ed9e257a9e127c622"
+  },
+  "scores_def5.csv.gz": {
+   "bytes": 1158655,
+   "sha256": "305d3117740d21844e87c95b9e08918fa021e48e1c6856038c4fae278171d1b0"
+  },
+  "smoke.json": {
+   "bytes": 543,
+   "sha256": "a841190536769d2124db6774d1898308598497e2904042e6aca934563e2a1884"
+  },
+  "tasks_def2.csv.gz": {
+   "bytes": 23211,
+   "sha256": "d02336f0bf473d8c960923876b0c71fcf96f7ac0911ca9eb52f55cb78fec1708"
+  },
+  "tasks_def5.csv.gz": {
+   "bytes": 21833,
+   "sha256": "ed089af16683898c18e68b23d3599060bd420b74e4060874452a488d50f07688"
+  }
+ }
+}

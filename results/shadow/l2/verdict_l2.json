@@ -1,0 +1,44 @@
+{
+ "decision": {
+  "R0": true,
+  "lost_share_def2": 0.0,
+  "R3_fallback_share_def2_v1": 0.15778688524590165,
+  "R3": false,
+  "R1_gap": 1.7191791478960852,
+  "R1_common_tasks": 468,
+  "R2_gap": -17.39357790756489,
+  "R2_common_tasks": 50,
+  "R2_dropped": null,
+  "R1": false,
+  "R2": false,
+  "strict": "NOT EVALUABLE (SCCH/PCFM-FT has 50 common tasks with ours in definition 2, under the 140 of B3)",
+  "literal": "NO-GO",
+  "variants": {
+   "nonstale": {
+    "R1_gap": 1.5798140648778087,
+    "R2_gap": -17.92975690853072,
+    "R1": false,
+    "R2": false
+   }
+  },
+  "fragile": false
+ },
+ "ci_files": [
+  "ci_d2_point_all_b14.json",
+  "ci_d2_point_all_b28.json",
+  "ci_d2_point_all_b7.json",
+  "ci_d2_point_nonstale_b7.json",
+  "ci_d2_prob_all_b14.json",
+  "ci_d2_prob_all_b28.json",
+  "ci_d2_prob_all_b7.json",
+  "ci_d2_prob_nonstale_b7.json",
+  "ci_d5_point_all_b14.json",
+  "ci_d5_point_all_b28.json",
+  "ci_d5_point_all_b7.json",
+  "ci_d5_point_nonstale_b7.json",
+  "ci_d5_prob_all_b14.json",
+  "ci_d5_prob_all_b28.json",
+  "ci_d5_prob_all_b7.json",
+  "ci_d5_prob_nonstale_b7.json"
+ ]
+}

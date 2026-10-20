@@ -19,7 +19,7 @@ DATA
    Its TEST-F window (2026-02-08 to 03-31) is used for evaluation only.
    Its VAL-F window (2026-01-01 to 02-07: served contexts, first-published truth and the reference models' forecasts) was used before the test to choose the network width (the pre-registered gate) and to calibrate the two decile spread scalars (1.05 at 15 min, 1.20 hourly).
    The network weights are trained on SMARD history only; no forecast of any other model is used in training.
-   (Corrected 2026-10-18: an earlier version said nothing from the Archive entered calibration.)
+   (Corrected 2026-10-17 23:16 UTC: an earlier version said nothing from the Archive entered calibration.)
    Results are self-obtained evaluations on the Archive, not official rankings.
 
 3. TS-Arena model metadata
@@ -41,10 +41,23 @@ SOFTWARE
    Copyright (c) 2025 Data Analytics Group - Paderborn University.
    submission/model-services/tests/__init__.py, quantile_contract.py and run_harness.py are verbatim copies of
    model-services/tests/ at commit cbbb347 (the contract checker and harness the service tests and README commands use).
-   The directory submission/model-services/gridload-compact/ is also contributed to that repository under its MIT licence
-   (https://github.com/DAG-UPB/ts-arena-models/pull/5).
+   The directory submission/model-services/gridload-compact/ was offered to that repository under its MIT licence in pull request 5
+   (https://github.com/DAG-UPB/ts-arena-models/pull/5).  The maintainers closed that pull request without merging it on 2026-10-12 (UTC), so the directory is not part of that repository.
 
-MIT LICENCE (items 5 and 6; the text below is the licence file of ts-arena-models and ts-arena-backend, which are identical)
+7. TS-Arena live rounds (the shadow check, results/shadow/)
+   Public reads of the TS-Arena dashboard API (https://ts-arena.live/api/v1) made on 2026-10-19 (UTC): the stored forecasts and scores of the field's models for the completed
+   live rounds registered 2026-08-24 to 2026-10-18, and the served contexts.  The ground truth underneath is SMARD (item 1), CC BY 4.0.  The platform's repositories state
+   licences for their source data (SMARD, Fingrid, Tankerkoenig: CC BY 4.0) and the Archive dataset is CC BY 4.0 (item 2); we did not find a statement covering the live
+   per-model forecasts and scores.  The raw per-model score tables (scores_def2.csv.gz, scores_def5.csv.gz) are therefore not redistributed here; results/shadow/ holds our own
+   per-task tables and aggregate results, and the SHA-256 of the withheld files is in results/shadow/out/manifest.json.  Results are self-obtained evaluations, not official rankings.
+
+8. ts-arena-backend, vendored copies (https://github.com/DAG-UPB/ts-arena-backend), MIT licence,
+   Copyright (c) 2025 Data Analytics Group - Paderborn University.
+   kernels/shadow/vendor/arena_score.py and kernels/shadow/vendor/forecast_metrics.py are unmodified copies of api-portal/app/services/arena_score.py and
+   api-portal/app/services/forecast_metrics.py at commit b8babf75a0a3c3df83ec30f584d9700dbc77053b (2026-10-15 UTC); the licence file is kernels/shadow/vendor/LICENSE-ts-arena-backend.txt
+   (identical to the text below).
+
+MIT LICENCE (items 5, 6 and 8; the text below is the licence file of ts-arena-models and ts-arena-backend, which are identical)
 
 MIT License
 
@@ -70,6 +83,6 @@ SOFTWARE.
 
 SERVICE DIRECTORY
 
-submission/model-services/gridload-compact/ (service code and the ONNX weights) is additionally offered under the MIT licence, as contributed to
-DAG-UPB/ts-arena-models (pull request 5). Either licence may be used for that directory.
+submission/model-services/gridload-compact/ (service code and the ONNX weights) is additionally offered under the MIT licence, the licence of DAG-UPB/ts-arena-models, to which it was
+offered in pull request 5 (closed without merging on 2026-10-12 UTC; the directory was not contributed). Either licence may be used for that directory.
 

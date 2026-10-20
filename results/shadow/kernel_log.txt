@@ -1,0 +1,40 @@
+[{"stream_name":"stdout","time":1.563088867,"data":"2026-10-19T20:24:03Z TEST-L1 shadow kernel start; python 3.13.15 numpy 2.1.3\n"}
+,{"stream_name":"stdout","time":1.563368306,"data":"2026-10-19T20:24:03Z build: {'slug': 'bench-timeseries-shadow', 'commit': '631e6a6ecaa1e1a450967b3150f21f87f4c5961b', 'built_utc': '2026-10-19 20:23:00', 'sources_sha256': {'shadow_lib.py': '053fca424103e080f4b26925b27f7ee7e172349d331947334218611db761d6c1', 'shadow_analysis.py': 'd9312a94914da346d018e26f91ae67bbc9088ce0621ee360051d94bf5eb750f5', 'shadow_kernel.py': '4f70567316a921881f076ccdce2edbf4e0ca3cdd38b4ee0f8052ceab2e6dff70', 'rounds_frozen.json': '161cb1e950cd2cac80bd8fc02c0c5bdeb7eb3b7f7eba24aba4700f5123cda1ef', 'vendor/arena_score.py': 'e667b6b6570fc98ec88f6f0e6902f46956e376524b82fcd656fa2a23e1b12a22', 'vendor/forecast_metrics.py': 'e39c065dca1ba1448638723351030311cede5d4d9bb00e5ee79836019fc7b78f', 'vendor/LICENSE-ts-arena-backend.txt': 'f6cb37dc97a22212125ac5432f577b0a35e4836f4e7f336a315ad095434c540f'}, 'manifest_sha256': '32d3338994b27af76555a1a3f04999b40cde8bedfdc67dddbbb19be107bd2cf6'}\n"}
+,{"stream_name":"stdout","time":1.564835076,"data":"2026-10-19T20:24:03Z V1 manifest check passed (service files and int8 weights equal the frozen hashes)\n"}
+,{"stream_name":"stdout","time":1.565054446,"data":"2026-10-19T20:24:03Z onnxruntime missing: pip install onnxruntime==1.30.0\n"}
+,{"stream_name":"stdout","time":9.143917782,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.6/23.6 MB 16.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":33.723632082,"data":"2026-10-19T20:24:36Z smoke: {\"def2\": {\"round\": 11493, \"n_tasks\": 10, \"eligible\": 10, \"field_rows\": 380, \"field_match_share\": 1.0, \"ours_rows\": 10, \"ours_finite\": true, \"ours_mean_mase\": 0.48419343052760866, \"paths\": {\"fallback\": 2, \"specialist\": 8}, \"seconds\": 10.8}, \"def5\": {\"round\": 11494, \"n_tasks\": 10, \"eligible\": 10, \"field_rows\": 360, \"field_match_share\": 1.0, \"ours_rows\": 10, \"ours_finite\": true, \"ours_mean_mase\": 0.416153972627492, \"paths\": {\"specialist\": 10}, \"seconds\": 9.9}, \"pass\": true}\n"}
+,{"stream_name":"stdout","time":43.944518531,"data":"2026-10-19T20:24:46Z def 2: round 1/56 (id 12048) tasks 10 eligible 10 rows 400 calls 67 retries 0 errors 0 10s\n"}
+,{"stream_name":"stdout","time":91.685219045,"data":"2026-10-19T20:25:34Z def 2: round 6/56 (id 12128) tasks 60 eligible 60 rows 2230 calls 177 retries 0 errors 0 58s\n"}
+,{"stream_name":"stdout","time":135.689409559,"data":"2026-10-19T20:26:18Z def 2: round 11/56 (id 12208) tasks 110 eligible 74 rows 2757 calls 287 retries 0 errors 0 102s\n"}
+,{"stream_name":"stdout","time":179.272798926,"data":"2026-10-19T20:27:01Z def 2: round 16/56 (id 12288) tasks 160 eligible 104 rows 3787 calls 397 retries 0 errors 0 146s\n"}
+,{"stream_name":"stdout","time":225.152480169,"data":"2026-10-19T20:27:47Z def 2: round 21/56 (id 12368) tasks 210 eligible 144 rows 5217 calls 507 retries 0 errors 0 191s\n"}
+,{"stream_name":"stdout","time":273.589488712,"data":"2026-10-19T20:28:35Z def 2: round 26/56 (id 12448) tasks 260 eligible 194 rows 7187 calls 617 retries 0 errors 0 240s\n"}
+,{"stream_name":"stdout","time":320.720767876,"data":"2026-10-19T20:29:23Z def 2: round 31/56 (id 12528) tasks 310 eligible 238 rows 8921 calls 727 retries 0 errors 0 287s\n"}
+,{"stream_name":"stdout","time":370.875106085,"data":"2026-10-19T20:30:13Z def 2: round 36/56 (id 12608) tasks 360 eligible 288 rows 10961 calls 837 retries 0 errors 0 337s\n"}
+,{"stream_name":"stdout","time":422.761796388,"data":"2026-10-19T20:31:05Z def 2: round 41/56 (id 12688) tasks 410 eligible 338 rows 13181 calls 947 retries 0 errors 0 389s\n"}
+,{"stream_name":"stdout","time":475.480950827,"data":"2026-10-19T20:31:57Z def 2: round 46/56 (id 12768) tasks 460 eligible 388 rows 15421 calls 1057 retries 0 errors 0 442s\n"}
+,{"stream_name":"stdout","time":528.281931026,"data":"2026-10-19T20:32:50Z def 2: round 51/56 (id 12848) tasks 510 eligible 438 rows 17851 calls 1167 retries 0 errors 0 495s\n"}
+,{"stream_name":"stdout","time":583.16859648,"data":"2026-10-19T20:33:45Z def 2: round 56/56 (id 12928) tasks 560 eligible 488 rows 20591 calls 1277 retries 0 errors 0 549s\n"}
+,{"stream_name":"stdout","time":592.535423832,"data":"2026-10-19T20:33:54Z def 5: round 1/54 (id 12050) tasks 10 eligible 10 rows 340 calls 1299 retries 0 errors 0 9s\n"}
+,{"stream_name":"stdout","time":638.009310025,"data":"2026-10-19T20:34:40Z def 5: round 6/54 (id 12130) tasks 60 eligible 38 rows 1432 calls 1409 retries 0 errors 0 54s\n"}
+,{"stream_name":"stdout","time":679.923885746,"data":"2026-10-19T20:35:22Z def 5: round 11/54 (id 12210) tasks 110 eligible 48 rows 1832 calls 1519 retries 0 errors 0 96s\n"}
+,{"stream_name":"stdout","time":722.663977528,"data":"2026-10-19T20:36:05Z def 5: round 16/54 (id 12290) tasks 160 eligible 58 rows 2232 calls 1629 retries 0 errors 0 139s\n"}
+,{"stream_name":"stdout","time":767.654640565,"data":"2026-10-19T20:36:50Z def 5: round 21/54 (id 12370) tasks 210 eligible 98 rows 3832 calls 1739 retries 0 errors 0 184s\n"}
+,{"stream_name":"stdout","time":813.018823515,"data":"2026-10-19T20:37:35Z def 5: round 26/54 (id 12450) tasks 260 eligible 142 rows 5636 calls 1849 retries 0 errors 0 229s\n"}
+,{"stream_name":"stdout","time":858.11509209,"data":"2026-10-19T20:38:20Z def 5: round 31/54 (id 12530) tasks 310 eligible 186 rows 7420 calls 1959 retries 0 errors 0 274s\n"}
+,{"stream_name":"stdout","time":903.662562194,"data":"2026-10-19T20:39:06Z def 5: round 36/54 (id 12610) tasks 360 eligible 236 rows 9420 calls 2069 retries 0 errors 0 320s\n"}
+,{"stream_name":"stdout","time":952.272120085,"data":"2026-10-19T20:39:54Z def 5: round 41/54 (id 12690) tasks 410 eligible 286 rows 11560 calls 2179 retries 0 errors 0 369s\n"}
+,{"stream_name":"stdout","time":1000.594170544,"data":"2026-10-19T20:40:42Z def 5: round 46/54 (id 12770) tasks 460 eligible 336 rows 13760 calls 2289 retries 0 errors 0 417s\n"}
+,{"stream_name":"stdout","time":1048.953722664,"data":"2026-10-19T20:41:31Z def 5: round 51/54 (id 12850) tasks 510 eligible 386 rows 16120 calls 2399 retries 0 errors 0 465s\n"}
+,{"stream_name":"stdout","time":1079.27930784,"data":"2026-10-19T20:42:01Z def 5: round 54/54 (id 12898) tasks 540 eligible 416 rows 17650 calls 2465 retries 0 errors 0 496s\n"}
+,{"stream_name":"stdout","time":1079.934252594,"data":"2026-10-19T20:42:02Z analysis def 2: status NOT_EVALUABLE_R0 r0 False 0s\n"}
+,{"stream_name":"stdout","time":1080.169570881,"data":"2026-10-19T20:42:02Z analysis def 5: status NOT_EVALUABLE_R0 r0 False 0s\n"}
+,{"stream_name":"stdout","time":1080.169611611,"data":"2026-10-19T20:42:02Z decision (kernel copy; the verdict is recomputed locally): NOT EVALUABLE (R0: the stored scores of visiontspp-large are not reproduced in definition 2)\n"}
+,{"stream_name":"stderr","time":1082.715818415,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1082.715859175,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1083.165773821,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1083.16580085,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1084.408451888,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1085.765359994,"data":"[NbConvertApp] Writing 539524 bytes to __results__.html\n"}
+]

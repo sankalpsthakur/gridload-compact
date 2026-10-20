@@ -1,0 +1,15 @@
+# gridload-compact v1 as vendored into the TEST-L1 shadow kernel: sha256 of the files of the public kit (github.com/sankalpsthakur/gridload-compact, commit 37b3a4295f8bbd02813497c814080689ba99e74a, path submission/model-services/gridload-compact/)
+# weights are NOT stored in this repository; they are embedded base64 in script.py and checked against these hashes at kernel start
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  app/__init__.py
+6c4475bbf3a5cffa8bfd7f5ce11833a90f8a925cbfdfc37166da4b83bfeb72b3  app/cal_np.py
+988b40e89fc392ee38045c9c8b73351cfbb2ef1602c2342cdb4580dde994c6ce  app/fallback.py
+b7a38400071a34fe09b4fba013e57ea9af0860570bd37cd9cb6814af7bdcccff  app/feats.py
+5baeca7997aa1d3eefab34072a3ea795adfa2b3180082a024e11553eb3815804  app/main.py
+4a30b29a9b89b9eeb32b299bc96d65f7e6fb6cc96eea92cb2e4119903c5cf7a8  app/model.py
+ecb24b27683476a1f874a09d3ea6ca0525d97dabe0749d9ed405fc54f32c028f  requirements.txt
+1e1dfaca195e8cb5d8977739bf7b91e34c8ab99d8275b39e9297988f65ed1622  weights/net15_int8.onnx
+549c86f26bc0c8fb56e4ab8d278165d05f4d9aac9c0073a27030b8f1da2a5bf7  weights/net60_int8.onnx
+2b7f9f1b7e38bb903ba7847f9d48429d3b7cbaf23365f809cf5785985442cafc  weights/net15_info.json
+e11985785a0a5f16a356a0e15272aa650eea7b7fd02c1f07b788107c4244a632  weights/net60_info.json
+2ade18a72fb14cc2ee38f00c5d86a0af9bcb62dd745941b1e315d82372cebdae  weights/hol_table.npz
+2731590de3ab89334e4d88e810ce205f08b7ad4bdbf84244d98dc4ad52fca56a  weights/clock_ref.npz

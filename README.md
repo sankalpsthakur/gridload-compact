@@ -27,7 +27,7 @@ Headline variant = the service code path with the int8 weights, scored with the 
   (-0.070 [-0.111, -0.021] against that window's best reference, flowstate).
 - **Definition 5 (72 h at 1 h): a tie, not a win.**  MASE 0.185 [0.161, 0.214] against 0.187 [0.157, 0.226] for chronos-2 (120 M parameters, about 1,400 times larger); difference -0.002 [-0.015, +0.007];
   SQL 0.148 against 0.150, difference -0.002 [-0.014, +0.006].  The model matches the best reference on the full 52-round window at a fraction of its size; no win is claimed.
-  **Correction (2026-10-20):** the tie holds over the full 52-round window under both this MASE and the platform's Arena Score (gap -0.3 [-5.1, +6.8]). Over the first 35 rounds, the ones the live board reproduces, the model is behind chronos-2: MASE +0.005 [-0.001, +0.010] (3 % worse; the interval touches 0), Arena Score gap -4.1 [-7.3, -1.1] with 7-day blocks ([-5.9, -2.0] with 28-day blocks), SQL gap -5.3 [-9.4, -1.9]; it is ahead only on the 17 archive-only late-March rounds. "Matches the best reference" therefore holds on the full Archive window only. The MASE in this card is the Archive-era platform convention, which the platform retired on 2026-10-15 in favour of the Arena Score; the numbers stay valid for the convention they state. A shadow check of the frozen model on completed live rounds (2026-08-24 to 10-18, self-evaluated, `results/shadow/l2/` in the evidence repository) placed it 14th of 46 on the definition-2 probabilistic ranking, so no live entry was made.
+  **Correction (2026-10-19 21:01 UTC):** the tie holds over the full 52-round window under both this MASE and the platform's Arena Score (gap -0.3 [-5.1, +6.8]). Over the first 35 rounds, the ones the live board reproduces, the model is behind chronos-2: MASE +0.005 [-0.001, +0.010] (3 % worse; the interval touches 0), Arena Score gap -4.1 [-7.3, -1.1] with 7-day blocks ([-5.9, -2.0] with 28-day blocks), SQL gap -5.3 [-9.4, -1.9]; it is ahead only on the 17 archive-only late-March rounds. "Matches the best reference" therefore holds on the full Archive window only. The MASE in this card is the Archive-era platform convention, which the platform retired on 2026-10-15 in favour of the Arena Score; the numbers stay valid for the convention they state. A shadow check of the frozen model on completed live rounds (2026-08-24 to 10-18, self-evaluated, `results/shadow/l2/` in this repository) placed it 14th of 46 fitted models on the definition-2 probabilistic ranking, so no live entry was made.
 
 Scoring is the platform's arena MASE (MAE of the forecast divided by the MAE of the last-context-value persistence forecast over the same horizon) and SQL (scaled quantile loss, same scale),
 reimplemented in `src/tsb/metrics.py` from the MIT backend of TS-Arena.  This is a self-obtained evaluation on the TS-Arena Archive and **not an official ranking**; no first-place or state-of-the-art claim is made.
@@ -205,6 +205,8 @@ What a clone of this repository cannot do without changes:
 | `TEST-LOG.md`, `INTEGRITY.md` | protocol, the ledger of the 16 TEST-F evaluations, post-run notes, integrity checklist |
 | `notes/revisions.md` | platform data conventions found on the way (clock, revisions, contexts, archive against live board) |
 | `reports/` | development report on the validation window |
+| `results/shadow/` | shadow check on completed live TS-Arena rounds (2026-08-24 .. 2026-10-18): verdicts, per-task tables of our model, Archive cross-checks (see its README); the platform's per-model score tables are not included |
+| `kernels/shadow/`, `scripts/shadow_*.py`, `scripts/arena_replica/` | sources of the shadow-check kernel (with the platform's scoring modules, MIT, vendored unmodified), the verdict and analysis scripts, the Archive cross-check scripts |
 | `results/bench-timeseries-{a1,a2,b,b-verify}/out/` | tables, json summaries, per-round score files (`faith/*.parquet`), ledgers; no logs, checkpoints or caches |
 | `submission/model-services/gridload-compact/` | the service exactly as in the TS-Arena pull request, with the final ONNX weights, info files, holiday table and clock reference |
 | `submission/model-services/tests/` | contract checker and harness of the TS-Arena models repository (MIT), copied verbatim |
@@ -213,7 +215,7 @@ What a clone of this repository cannot do without changes:
 
 ## TS-Arena submission
 
-Offered to the TS-Arena Reference Track as a pull request to ts-arena-models (https://github.com/DAG-UPB/ts-arena-models/pull/5), which the maintainers closed on 2026-10-12: the Reference Track lists published methods, and its contribution guide (2026-10-13) does not include models trained from scratch. The maintainers invited the model to the Open Track, which it has not entered yet. (Updated 2026-10-19.)
+Offered to the TS-Arena Reference Track as a pull request to ts-arena-models (https://github.com/DAG-UPB/ts-arena-models/pull/5), which the maintainers closed without merging on 2026-10-12 (UTC): the Reference Track lists published methods, and its contribution guide (2026-10-13) does not include models trained from scratch. The maintainers invited the model to the Open Track, which it has not entered yet. (Updated 2026-10-19.)
 
 ## Hugging Face model repository
 
@@ -222,10 +224,10 @@ Upload these files to the model repository: `net15.onnx`, `net15_int8.onnx`, `ne
 
 ## Licences and attribution
 
-- Code and model weights in this repository: Apache-2.0 (`LICENSE`), except the third-party files named in `NOTICE`.  The `gridload-compact` service directory is also contributed to the MIT-licensed ts-arena-models repository in the pull request above, where it
-  is offered under that repository's MIT licence (this is what its README says).
+- Code and model weights in this repository: Apache-2.0 (`LICENSE`), except the third-party files named in `NOTICE`.  The `gridload-compact` service directory was offered to the MIT-licensed ts-arena-models repository in the pull request above (closed unmerged, so not contributed), where it
+  was offered under that repository's MIT licence (this is what its README says); `NOTICE` states the current terms for the directory.
 - Training data: SMARD, Bundesnetzagentur | SMARD.de, CC BY 4.0 (https://www.smard.de/).  The weights are derived from it; changes were made.
-- Evaluation data: TS-Arena-Archive (DAG-UPB/TS-Arena-Archive), CC BY 4.0.  Its TEST-F window (2026-02-08 to 03-31) is used for evaluation only. Its VAL-F window (2026-01-01 to 02-07: served contexts, first-published truth and the reference models' forecasts) was used before the test to choose the network width (the pre-registered gate) and to calibrate the two decile spread scalars (1.05 at 15 min, 1.20 hourly). The network weights are trained on SMARD history only; no forecast of any other model is used in training. (Corrected 2026-10-18: an earlier version said nothing from the Archive entered calibration.)
+- Evaluation data: TS-Arena-Archive (DAG-UPB/TS-Arena-Archive), CC BY 4.0.  Its TEST-F window (2026-02-08 to 03-31) is used for evaluation only. Its VAL-F window (2026-01-01 to 02-07: served contexts, first-published truth and the reference models' forecasts) was used before the test to choose the network width (the pre-registered gate) and to calibrate the two decile spread scalars (1.05 at 15 min, 1.20 hourly). The network weights are trained on SMARD history only; no forecast of any other model is used in training. (Corrected 2026-10-17 23:16 UTC: an earlier version said nothing from the Archive entered calibration.)
 - Baked holiday table: generated with the python `holidays` package (MIT).
 - Third-party files and full attributions: `NOTICE`.
 
@@ -235,5 +237,5 @@ Self-evaluated, not peer-reviewed.  Sankalp Thakur, October 2026.
 
 ## Licence note
 
-Everything in this repository is Apache-2.0 (see `LICENSE`) except: the directory `submission/model-services/gridload-compact/` (service code and weights), which is also offered under the MIT licence exactly as contributed to [DAG-UPB/ts-arena-models](https://github.com/DAG-UPB/ts-arena-models/pull/5) (its own README's "this repository" refers to that MIT repository); the vendored test helpers under `submission/model-services/tests/` (MIT, ts-arena-models); and the data attributions in `NOTICE` (SMARD CC BY 4.0, TS-Arena-Archive CC BY 4.0, `holidays` MIT).
+Everything in this repository is Apache-2.0 (see `LICENSE`) except: the directory `submission/model-services/gridload-compact/` (service code and weights), which is also offered under the MIT licence exactly as offered to [DAG-UPB/ts-arena-models](https://github.com/DAG-UPB/ts-arena-models/pull/5) (closed unmerged on 2026-10-12 UTC; its own README's "this repository" refers to that MIT repository); the vendored test helpers under `submission/model-services/tests/` (MIT, ts-arena-models); and the data attributions in `NOTICE` (SMARD CC BY 4.0, TS-Arena-Archive CC BY 4.0, `holidays` MIT).
 

@@ -1,0 +1,190 @@
+{
+ "d2_prob": {
+  "1000000000": {
+   "score": 145.8237100637106,
+   "ci_lower": 131.30598908423156,
+   "ci_upper": 160.34143104318963,
+   "weeks": 8,
+   "evidence": 487.99999999999244,
+   "rank_best": 1,
+   "rank_worst": 17,
+   "provisional": false
+  },
+  "131": {
+   "score": 144.1045309158145,
+   "ci_lower": 129.5868099363355,
+   "ci_upper": 158.62225189529354,
+   "weeks": 8,
+   "evidence": 467.99999999999403,
+   "rank_best": 1,
+   "rank_worst": 17,
+   "provisional": false
+  },
+  "4240": {
+   "score": 163.21728797127548,
+   "ci_lower": 127.87984346347683,
+   "ci_upper": 198.55473247907415,
+   "weeks": 1,
+   "evidence": 50.00000000000007,
+   "rank_best": null,
+   "rank_worst": null,
+   "provisional": true
+  },
+  "107": {
+   "score": 159.0814091220085,
+   "ci_lower": 144.56368814252946,
+   "ci_upper": 173.59913010148753,
+   "weeks": 8,
+   "evidence": 487.9999999999967,
+   "rank_best": 1,
+   "rank_worst": 16,
+   "provisional": false
+  }
+ },
+ "d2_point": {
+  "1000000000": {
+   "score": 128.7477313387101,
+   "ci_lower": 114.13326687122742,
+   "ci_upper": 143.36219580619283,
+   "weeks": 8,
+   "evidence": 477.0073069292709,
+   "rank_best": 1,
+   "rank_worst": 21,
+   "provisional": false
+  },
+  "131": {
+   "score": 123.83842116734733,
+   "ci_lower": 109.22395669986464,
+   "ci_upper": 138.45288563483,
+   "weeks": 8,
+   "evidence": 458.6178545966101,
+   "rank_best": 1,
+   "rank_worst": 23,
+   "provisional": false
+  },
+  "4240": {
+   "score": 143.2938013359018,
+   "ci_lower": 108.76142090487875,
+   "ci_upper": 177.82618176692483,
+   "weeks": 1,
+   "evidence": 49.9999999999999,
+   "rank_best": null,
+   "rank_worst": null,
+   "provisional": true
+  },
+  "2328": {
+   "score": 149.90883773531786,
+   "ci_lower": 131.73746430846944,
+   "ci_upper": 168.08021116216628,
+   "weeks": 5,
+   "evidence": 207.63235657210325,
+   "rank_best": 1,
+   "rank_worst": 16,
+   "provisional": false
+  },
+  "107": {
+   "score": 136.94624551972643,
+   "ci_lower": 122.33178105224374,
+   "ci_upper": 152.86341285852473,
+   "weeks": 8,
+   "evidence": 477.00730692926834,
+   "rank_best": 1,
+   "rank_worst": 20,
+   "provisional": false
+  }
+ },
+ "d5_prob": {
+  "1000000000": {
+   "score": 162.4925561871154,
+   "ci_lower": 141.76397788610174,
+   "ci_upper": 182.73320666535335,
+   "weeks": 8,
+   "evidence": 412.8555923961118,
+   "rank_best": 1,
+   "rank_worst": 23,
+   "provisional": false
+  },
+  "131": {
+   "score": 144.6892255286768,
+   "ci_lower": 124.4485750504388,
+   "ci_upper": 164.92987600691475,
+   "weeks": 8,
+   "evidence": 412.85559239611297,
+   "rank_best": 1,
+   "rank_worst": 24,
+   "provisional": false
+  },
+  "4240": {
+   "score": 166.3502461908145,
+   "ci_lower": 123.10722806391796,
+   "ci_upper": 209.593264317711,
+   "weeks": 1,
+   "evidence": 29.999999999999957,
+   "rank_best": null,
+   "rank_worst": null,
+   "provisional": true
+  },
+  "107": {
+   "score": 184.62009285792695,
+   "ci_lower": 164.37944237968898,
+   "ci_upper": 204.86074333616494,
+   "weeks": 8,
+   "evidence": 412.8555923961055,
+   "rank_best": 1,
+   "rank_worst": 15,
+   "provisional": false
+  }
+ },
+ "d5_point": {
+  "1000000000": {
+   "score": 142.6451779942401,
+   "ci_lower": 122.78954329032909,
+   "ci_upper": 162.50081269815112,
+   "weeks": 8,
+   "evidence": 411.2730830572967,
+   "rank_best": 1,
+   "rank_worst": 27,
+   "provisional": false
+  },
+  "131": {
+   "score": 125.05332758132906,
+   "ci_lower": 105.19769287741802,
+   "ci_upper": 144.90896228524005,
+   "weeks": 8,
+   "evidence": 411.2730830572937,
+   "rank_best": 1,
+   "rank_worst": 30,
+   "provisional": false
+  },
+  "4240": {
+   "score": 142.6639025982645,
+   "ci_lower": 100.17731655304904,
+   "ci_upper": 185.15048864347995,
+   "weeks": 1,
+   "evidence": 30.00000000000001,
+   "rank_best": null,
+   "rank_worst": null,
+   "provisional": true
+  },
+  "2328": {
+   "score": 164.96912287530074,
+   "ci_lower": 140.57562545909786,
+   "ci_upper": 189.36262029150365,
+   "weeks": 5,
+   "evidence": 204.66923076923075,
+   "rank_best": 1,
+   "rank_worst": 17,
+   "provisional": false
+  },
+  "107": {
+   "score": 160.98772356554915,
+   "ci_lower": 141.13208886163815,
+   "ci_upper": 180.8433582694602,
+   "weeks": 8,
+   "evidence": 411.27308305729554,
+   "rank_best": 1,
+   "rank_worst": 17,
+   "provisional": false
+  }
+ }
+}

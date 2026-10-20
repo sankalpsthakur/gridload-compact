@@ -1,0 +1,52 @@
+
+=== def 5 | TEST-F full | 2026-02-08..2026-03-31 | tasks=520 | models=21
+    193.8  chronos-2
+    192.9  GRIDLOAD-COMPACT
+    192.1  moirai-2-small
+    187.3  chronos-bolt-tiny
+    187.2  chronos-bolt-mini
+    185.9  chronos-bolt-small
+    185.3  chronos-bolt-base
+    183.1  flowstate
+  ... GRIDLOAD-COMPACT: 192.9 (place 2 of 21); best reference: chronos-2 193.8
+  gap to best reference: -1.0 points
+  paired mean log-ratio gap vs chronos-2: -1.0 pts, week-block 95% CI [-6.7, +6.9] (n tasks=518, weeks=9)
+
+=== def 5 | TEST-F first 35 rounds | 2026-02-08..2026-03-14 | tasks=350 | models=21
+    206.6  chronos-2
+    202.1  moirai-2-small
+    201.3  GRIDLOAD-COMPACT
+    198.0  chronos-bolt-mini
+    197.6  chronos-bolt-small
+    197.3  chronos-bolt-base
+    196.4  flowstate
+    196.4  chronos-bolt-tiny
+  ... GRIDLOAD-COMPACT: 201.3 (place 3 of 21); best reference: chronos-2 206.6
+  gap to best reference: -5.3 points
+  paired mean log-ratio gap vs chronos-2: -5.5 pts, week-block 95% CI [-9.8, -1.9] (n tasks=350, weeks=6)
+
+=== def 5 | TEST-F late March (archive-only) | 2026-03-15..2026-03-31 | tasks=170 | models=21
+    177.1  GRIDLOAD-COMPACT
+    173.1  moirai-2-small
+    170.5  timesfm-2.0-500m
+    170.2  chronos-bolt-tiny
+    169.2  chronos-2
+    167.4  timesfm-1.0-200m
+    166.4  chronos-bolt-mini
+    166.4  visiontspp-large
+  ... GRIDLOAD-COMPACT: 177.1 (place 1 of 21); best reference: moirai-2-small 173.1
+  gap to best reference: +4.0 points
+  paired mean log-ratio gap vs moirai-2-small: +3.9 pts, week-block 95% CI [-7.8, +21.3] (n tasks=168, weeks=4)
+
+=== def 5 | VAL-F + TEST-F whole archive Q1 | 2026-01-01..2026-03-31 | tasks=900 | models=21
+    185.2  chronos-2
+    184.5  GRIDLOAD-COMPACT
+    179.8  moirai-2-small
+    179.8  chronos-bolt-mini
+    178.6  chronos-bolt-tiny
+    177.9  chronos-bolt-small
+    177.1  chronos-bolt-base
+    176.3  visiontspp-large
+  ... GRIDLOAD-COMPACT: 184.5 (place 2 of 21); best reference: chronos-2 185.2
+  gap to best reference: -0.7 points
+  paired mean log-ratio gap vs chronos-2: -1.0 pts, week-block 95% CI [-6.7, +6.9] (n tasks=518, weeks=9)

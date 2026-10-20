@@ -1,0 +1,52 @@
+
+=== def 2 | TEST-F full | 2026-02-08..2026-03-31 | tasks=511 | models=33
+    161.9  GRIDLOAD-COMPACT
+    155.0  visiontspp-large
+    152.8  visiontspp-base
+    152.6  flowstate
+    152.0  timesfm-2.5-200m
+    150.3  chronos-bolt-base
+    149.4  chronos-bolt-mini
+    149.0  chronos-bolt-tiny
+  ... GRIDLOAD-COMPACT: 161.9 (place 1 of 33); best reference: visiontspp-large 155.0
+  gap to best reference: +7.0 points
+  paired mean log-ratio gap vs visiontspp-large: +7.5 pts, week-block 95% CI [-0.0, +14.8] (n tasks=509, weeks=9)
+
+=== def 2 | TEST-F first 35 rounds | 2026-02-08..2026-03-14 | tasks=350 | models=33
+    175.6  GRIDLOAD-COMPACT
+    174.2  visiontspp-large
+    169.3  visiontspp-base
+    168.5  chronos-bolt-base
+    167.7  flowstate
+    167.1  timesfm-2.5-200m
+    166.9  chronos-2
+    164.6  chronos-bolt-tiny
+  ... GRIDLOAD-COMPACT: 175.6 (place 1 of 33); best reference: visiontspp-large 174.2
+  gap to best reference: +1.4 points
+  paired mean log-ratio gap vs visiontspp-large: +1.5 pts, week-block 95% CI [-4.6, +6.1] (n tasks=350, weeks=6)
+
+=== def 2 | TEST-F late March (archive-only) | 2026-03-15..2026-03-31 | tasks=161 | models=33
+    135.7  GRIDLOAD-COMPACT
+    123.3  flowstate
+    122.5  timesfm-2.5-200m
+    120.5  chronos-bolt-mini
+    120.4  visiontspp-base
+    118.7  chronos-bolt-small
+    118.7  chronos-bolt-tiny
+    116.8  visiontspp-large
+  ... GRIDLOAD-COMPACT: 135.7 (place 1 of 33); best reference: flowstate 123.3
+  gap to best reference: +12.4 points
+  paired mean log-ratio gap vs flowstate: +13.5 pts, week-block 95% CI [+7.7, +19.2] (n tasks=159, weeks=4)
+
+=== def 2 | VAL-F + TEST-F whole archive Q1 | 2026-01-01..2026-03-31 | tasks=891 | models=33
+    162.5  GRIDLOAD-COMPACT
+    155.0  visiontspp-large
+    154.3  flowstate
+    151.2  visiontspp-base
+    150.7  timesfm-2.5-200m
+    150.1  chronos-bolt-base
+    149.0  chronos-bolt-small
+    147.7  chronos-bolt-mini
+  ... GRIDLOAD-COMPACT: 162.5 (place 1 of 33); best reference: visiontspp-large 155.0
+  gap to best reference: +7.5 points
+  paired mean log-ratio gap vs visiontspp-large: +7.5 pts, week-block 95% CI [-0.0, +14.8] (n tasks=509, weeks=9)

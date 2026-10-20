@@ -1,0 +1,32 @@
+{
+ "def2": {
+  "round": 11493,
+  "n_tasks": 10,
+  "eligible": 10,
+  "field_rows": 380,
+  "field_match_share": 1.0,
+  "ours_rows": 10,
+  "ours_finite": true,
+  "ours_mean_mase": 0.48419343052760866,
+  "paths": {
+   "fallback": 2,
+   "specialist": 8
+  },
+  "seconds": 10.8
+ },
+ "def5": {
+  "round": 11494,
+  "n_tasks": 10,
+  "eligible": 10,
+  "field_rows": 360,
+  "field_match_share": 1.0,
+  "ours_rows": 10,
+  "ours_finite": true,
+  "ours_mean_mase": 0.416153972627492,
+  "paths": {
+   "specialist": 10
+  },
+  "seconds": 9.9
+ },
+ "pass": true
+}
